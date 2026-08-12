@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#ffffff">
-  <title>Diagnóstico de Crescimento Orgânico | Core Audience</title>
-  <meta name="description" content="Descubra em 2 minutos o que está travando o crescimento orgânico do seu perfil no Instagram.">
-  <link rel="icon" type="image/png" href="logo.png">
-  <!-- Meta Pixel (Core Audience) -->
+  <title>Scanner do Envelhecimento | Programa Cuidado Seguro</title>
+  <meta name="description" content="Descubra em poucos minutos se a rotina do seu pai ou da sua mãe está preservando capacidades ou acelerando o declínio funcional.">
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <!-- Meta Pixel (Programa Cuidado Seguro) -->
+  <!-- TROQUE '0000000000000000' PELO SEU PIXEL ID DO META ADS ANTES DE RODAR TRÁFEGO -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,40 +18,40 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '943872144205445');
+    fbq('init', '0000000000000000');
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none" alt=""
-    src="https://www.facebook.com/tr?id=943872144205445&ev=PageView&noscript=1"/></noscript>
+    src="https://www.facebook.com/tr?id=0000000000000000&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* ===== TEMA CLEAN (claro) — roxo Core só como acento ===== */
-      --bg-page: #fafafc;
-      --bg-header: #0d0a1a;
+      /* ===== TEMA CLEAN (claro) — dourado + verde escuro (Programa Cuidado Seguro) ===== */
+      --bg-page: #fafaf8;
+      --bg-header: #1c3a2c;
       --bg-card: #ffffff;
-      --bg-soft: #f2f1f7;          /* bolha do bot */
+      --bg-soft: #f2f0ea;          /* bolha do bot */
       --bg-input: #ffffff;
-      --text: #18141f;
-      --text-dim: #4a4458;
-      --text-muted: #9b95a8;
-      --border: rgba(24, 20, 31, 0.08);
-      --border-accent: rgba(161, 85, 242, 0.3);
-      --accent: #a155f2;
-      --accent-bright: #b876ff;
-      --accent-dark: #7d3bd6;
-      --accent-soft: rgba(161, 85, 242, 0.09);
-      --accent-glow: rgba(161, 85, 242, 0.3);
+      --text: #201d17;
+      --text-dim: #4d493f;
+      --text-muted: #9a9384;
+      --border: rgba(32, 29, 23, 0.08);
+      --border-accent: rgba(184, 135, 74, 0.35);
+      --accent: #b8874a;
+      --accent-bright: #cfa05f;
+      --accent-dark: #8f6530;
+      --accent-soft: rgba(184, 135, 74, 0.10);
+      --accent-glow: rgba(184, 135, 74, 0.32);
       --green: #25d366;
       --green-dark: #1faa52;
-      --gold: #f5a623;
-      --red: #e5485f;
-      --gradient: linear-gradient(135deg, #a155f2 0%, #8b3fe0 100%);
-      --gradient-gold: linear-gradient(135deg, #f7b545 0%, #ef8f1f 100%);
-      --shadow-soft: 0 1px 2px rgba(24,20,31,.04), 0 8px 24px rgba(24,20,31,.06);
+      --gold: #b8874a;
+      --red: #c0433f;
+      --gradient: linear-gradient(135deg, #b8874a 0%, #8f6530 100%);
+      --gradient-gold: linear-gradient(135deg, #d4a566 0%, #b8874a 100%);
+      --shadow-soft: 0 1px 2px rgba(32,29,23,.05), 0 8px 24px rgba(32,29,23,.06);
       --radius: 18px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -64,7 +65,7 @@
       overflow: hidden;
     }
 
-    /* ===== HEADER (claro, identidade própria: badge de marca + pill de etapa + linha de progresso) ===== */
+    /* ===== HEADER ===== */
     header {
       background: #fff;
       border-bottom: 1px solid var(--border);
@@ -74,15 +75,14 @@
     }
     @keyframes headerIn { from { transform: translateY(-100%); } to { transform: translateY(0); } }
     .topbar {
-      max-width: 720px; margin: 0 auto; padding: 12px 18px;
+      max-width: 720px; margin: 0 auto; padding: 10px 18px;
       display: flex; align-items: center; justify-content: space-between; gap: 12px;
     }
     .brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
     .brand-badge {
-      background: var(--bg-header); border-radius: 11px; padding: 8px 12px;
       display: flex; align-items: center; flex-shrink: 0;
     }
-    .brand-badge img { height: 17px; width: auto; max-width: 92px; object-fit: contain; display: block; }
+    .brand-badge img { height: 42px; width: auto; max-width: 160px; object-fit: contain; display: block; }
     .brand-sub {
       font-size: 12.5px; font-weight: 600; color: var(--text-dim);
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -115,7 +115,7 @@
       overflow: hidden; display: flex; align-items: center; justify-content: center;
     }
     .avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .avatar img.is-logo { object-fit: contain; padding: 4px; }
+    .avatar img.is-logo { object-fit: contain; padding: 4px; background: #fff; }
     .row.cont .avatar { visibility: hidden; }
 
     .bubble {
@@ -131,7 +131,7 @@
     .row.bot .bubble { background: var(--bg-soft); border-bottom-left-radius: 6px; }
     .row.user .bubble {
       background: var(--gradient); color: #fff; font-weight: 600;
-      border-bottom-right-radius: 6px; box-shadow: 0 4px 18px rgba(161,85,242,.28);
+      border-bottom-right-radius: 6px; box-shadow: 0 4px 18px rgba(184,135,74,.28);
     }
     .row.user .bubble b { color: #fff; }
 
@@ -159,7 +159,7 @@
       animation: spin .7s linear infinite;
     }
     .lstep.ok { color: var(--text-dim); }
-    .lstep.ok .ic { background: #e7f8ee; color: var(--green-dark); animation: popIn .3s ease; }
+    .lstep.ok .ic { background: #e7f2ea; color: var(--green-dark); animation: popIn .3s ease; }
     @keyframes spin { to { transform: rotate(360deg); } }
     @keyframes popIn { from { transform: scale(.4); } 70% { transform: scale(1.2); } to { transform: scale(1); } }
     .loader-bar { margin-top: 14px; height: 5px; border-radius: 3px; background: var(--accent-soft); overflow: hidden; }
@@ -175,31 +175,6 @@
       animation: shimmer 1.4s infinite;
     }
     @keyframes shimmer { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
-
-    /* ===== CARD DE PERFIL (Apify) ===== */
-    .pcard-bubble { max-width: 88% !important; background: var(--bg-card) !important; border: 1px solid var(--border); box-shadow: var(--shadow-soft); }
-    .pcard { display: flex; gap: 14px; align-items: center; }
-    .ppic {
-      width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
-      background: var(--bg-soft) center/cover no-repeat;
-      border: 2.5px solid transparent;
-      background-clip: padding-box;
-      box-shadow: 0 0 0 2.5px var(--accent);
-    }
-    .pname { font-weight: 700; color: var(--text); font-size: 15px; display: flex; align-items: center; gap: 6px; }
-    .pverif {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 15px; height: 15px; border-radius: 50%;
-      background: #4da6ff; color: #fff; font-size: 9px; font-weight: 800;
-    }
-    .puser { color: var(--accent-dark); font-size: 13px; font-weight: 600; margin-top: 1px; }
-    .pstats { display: flex; gap: 14px; margin-top: 7px; font-size: 12.5px; color: var(--text-muted); }
-    .pstats b { color: var(--text); font-size: 14px; }
-    .pcat {
-      display: inline-block; margin-top: 7px; padding: 3px 10px; border-radius: 99px;
-      background: var(--accent-soft);
-      font-size: 11px; color: var(--accent-dark); font-weight: 700;
-    }
 
     /* ===== RESULT CARD + CTA ===== */
     .result-card {
@@ -220,15 +195,15 @@
     }
     .cta-btn {
       display: flex; align-items: center; justify-content: center; gap: 9px;
-      width: 100%; padding: 15px; margin-top: 12px;
+      width: 100%; padding: 15px; margin-top: 2px;
       border: none; border-radius: 13px; cursor: pointer;
       font-family: inherit; font-size: 15px; font-weight: 700; color: #fff;
       text-decoration: none; transition: transform .15s, box-shadow .15s;
     }
     .cta-btn:active { transform: scale(.97); }
     .cta-btn.whats { background: linear-gradient(135deg, #25d366, #1faa52); box-shadow: 0 6px 20px rgba(37,211,102,.3); }
-    .cta-btn.gift { background: var(--gradient-gold); color: #3c2503; box-shadow: 0 6px 22px rgba(245,166,35,.35); animation: giftPulse 2s ease-in-out infinite; }
-    @keyframes giftPulse { 50% { box-shadow: 0 6px 32px rgba(245,166,35,.55); transform: translateY(-1px); } }
+    .cta-btn.gift { background: var(--gradient-gold); color: #3c2503; box-shadow: 0 6px 22px rgba(184,135,74,.35); animation: giftPulse 2s ease-in-out infinite; }
+    @keyframes giftPulse { 50% { box-shadow: 0 6px 32px rgba(184,135,74,.55); transform: translateY(-1px); } }
     .cta-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
 
     /* ===== INPUT DOCK (inline: aparece logo abaixo da pergunta) ===== */
@@ -272,7 +247,7 @@
     .input-hint { font-size: 12px; color: var(--red); margin: 7px 6px 0; min-height: 15px; }
     .lgpd { font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 10px; line-height: 1.5; }
 
-    /* select (perguntas com muitas opções) */
+    /* select (não usado no fluxo atual, mantido por compatibilidade) */
     .select-wrap { display: none; align-items: center; gap: 8px; animation: msgIn .4s both; }
     .select-wrap.show { display: flex; }
     .select-shell { position: relative; flex: 1; min-width: 0; }
@@ -290,66 +265,15 @@
       color: var(--text-muted); pointer-events: none; font-size: 13px;
     }
 
-    /* destaque do gatilho principal ausente */
+    /* aviso importante (disclaimer) */
     .gatilho-falta {
       margin-top: 12px; display: flex; align-items: center; gap: 10px;
-      background: linear-gradient(135deg, #fff3f0, #ffe8e2);
-      border: 1.5px solid #f3b8a6; border-radius: 12px; padding: 11px 14px;
-      font-size: 13px; color: #7a3522; font-weight: 600;
+      background: linear-gradient(135deg, #fbf4ea, #f6e9d4);
+      border: 1.5px solid #e3c68f; border-radius: 12px; padding: 11px 14px;
+      font-size: 13px; color: #5c4321; font-weight: 600;
     }
     .gatilho-falta .gf-ic { font-size: 18px; }
-    .gatilho-falta b { color: #5c2412; }
-
-    /* pilares trancados do diagnóstico (curiosidade → sessão) */
-    .locked {
-      margin-top: 14px; border: 1.5px dashed rgba(161, 85, 242, .35);
-      border-radius: 13px; padding: 12px 13px; background: rgba(161, 85, 242, .04);
-    }
-    .locked-row {
-      display: flex; align-items: center; justify-content: space-between;
-      font-size: 13.5px; color: var(--text); padding: 3px 0;
-    }
-    .locked-nota {
-      background: var(--accent-soft); color: var(--accent-dark);
-      font-weight: 800; font-size: 12px; padding: 3px 10px; border-radius: 99px;
-    }
-    .locked-fake {
-      filter: blur(4px); user-select: none; pointer-events: none;
-      font-size: 12px; color: var(--text-muted); line-height: 1.5;
-      margin: 4px 0 9px;
-    }
-    .locked-cta {
-      margin-top: 8px; padding-top: 10px; border-top: 1px dashed rgba(161, 85, 242, .25);
-      font-size: 12.5px; color: var(--text-dim); text-align: center;
-    }
-
-    /* introdução do Método CORE — contexto dos 3 pilares antes do diagnóstico */
-    .metodo-intro {
-      border: 1.5px solid rgba(161, 85, 242, .22); border-radius: 14px;
-      padding: 13px 14px; background: linear-gradient(180deg, rgba(161, 85, 242, .06), rgba(161, 85, 242, .015));
-    }
-    .metodo-intro .mi-head { font-size: 13.5px; color: var(--text); line-height: 1.5; margin-bottom: 10px; }
-    .mi-pilar { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; }
-    .mi-pilar .mi-ic { font-size: 17px; line-height: 1.45; flex: 0 0 auto; }
-    .mi-pilar b { display: block; font-size: 13.5px; color: var(--text); }
-    .mi-pilar i { font-style: normal; font-size: 12.5px; color: var(--text-muted); line-height: 1.4; }
-    .mi-foot {
-      margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(161, 85, 242, .22);
-      font-size: 12.5px; color: var(--text-dim); line-height: 1.5;
-    }
-    .mi-foot b { color: var(--accent-dark); }
-
-    /* anúncio do presente (ênfase) */
-    .bubble.gift-announce {
-      background: linear-gradient(135deg, #fff7e4, #ffedc4);
-      border: 1.5px solid #f0cd86;
-      color: #6b4a0c; font-weight: 600;
-      box-shadow: 0 6px 22px rgba(240, 180, 60, .22);
-      animation: giftAnnounce .6s cubic-bezier(.22,1,.36,1) both;
-    }
-    .bubble.gift-announce b { color: #4a3105; }
-    .bubble.gift-announce .gift-prod { font-size: 17.5px; letter-spacing: .01em; }
-    @keyframes giftAnnounce { from { opacity: 0; transform: translateY(18px) scale(.94); } 70% { transform: scale(1.02); } to { opacity: 1; transform: none; } }
+    .gatilho-falta b { color: #3d2c14; }
 
     /* chips */
     .chips { display: none; flex-wrap: wrap; gap: 9px; justify-content: center; animation: msgIn .4s both; }
@@ -364,28 +288,7 @@
     .chip:hover, .chip:focus-visible { border-color: var(--accent); color: var(--accent-dark); background: var(--accent-soft); }
     .chip:active { transform: scale(.95); }
 
-    /* seletor de reels */
-    .reels {
-      display: none; gap: 10px; overflow-x: auto; padding: 4px 2px 10px;
-      animation: msgIn .4s both; scrollbar-width: thin; scrollbar-color: var(--accent) transparent;
-    }
-    .reels.show { display: flex; }
-    .reel-card {
-      flex: 0 0 118px; height: 180px; border-radius: 14px; border: 2px solid var(--border);
-      background: #e9e7f1 center/cover no-repeat; cursor: pointer; position: relative;
-      transition: transform .18s, border-color .18s, box-shadow .18s; overflow: hidden; padding: 0;
-      box-shadow: var(--shadow-soft);
-    }
-    .reel-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.7)); }
-    .reel-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 10px 26px var(--accent-glow); }
-    .reel-views {
-      position: absolute; bottom: 8px; left: 8px; z-index: 1;
-      background: rgba(0,0,0,.55); backdrop-filter: blur(4px);
-      color: #fff; font-size: 11.5px; font-weight: 700; font-family: inherit;
-      padding: 4px 9px; border-radius: 99px;
-    }
-
-    /* ===== AGENDA INLINE (no chat, estilo Viver de IA) ===== */
+    /* ===== AGENDA INLINE (no chat) ===== */
     .agenda-card {
       padding: 0 !important; overflow: hidden; width: min(380px, 88vw);
       background: var(--bg-card) !important; border: 1px solid var(--border);
@@ -429,7 +332,7 @@
     .ag-d {
       aspect-ratio: 1; border: none; background: none; border-radius: 50%;
       font-family: inherit; font-size: 13.5px; display: flex; align-items: center;
-      justify-content: center; color: #c9c5d4; cursor: default; margin: 1px auto;
+      justify-content: center; color: #ccc7ba; cursor: default; margin: 1px auto;
       width: 36px; max-width: 100%;
     }
     .ag-d.on { color: var(--text); font-weight: 700; cursor: pointer; transition: all .15s; }
@@ -448,7 +351,7 @@
     .ag-done { padding: 26px 18px; text-align: center; }
     .ag-done .ag-check {
       width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 12px;
-      background: #e7f8ee; color: var(--green-dark); font-size: 24px; font-weight: 800;
+      background: #e7f2ea; color: var(--green-dark); font-size: 24px; font-weight: 800;
       display: flex; align-items: center; justify-content: center;
       animation: popIn .4s ease;
     }
@@ -458,7 +361,7 @@
       display: inline-flex; align-items: center; justify-content: center;
       margin-top: 14px; padding: 12px 18px; border-radius: 11px;
       background: var(--gradient); color: #fff; font-weight: 700; font-size: 13.5px;
-      text-decoration: none; box-shadow: 0 5px 18px rgba(161,85,242,.3);
+      text-decoration: none; box-shadow: 0 5px 18px rgba(184,135,74,.3);
     }
     /* card com o booker embutido (agendamento real via instância) */
     .cal-embed-card { width: 100%; max-width: 96% !important; }
@@ -466,12 +369,12 @@
     .cal-embed-slot { min-height: 560px; max-height: 660px; overflow-y: auto; }
     .cal-embed-slot iframe { border: 0; display: block; }
 
-    /* ===== PREVIEW DO PRODUTO (Template 30 Reels) ===== */
+    /* ===== CARD DO PAINEL ESTRATÉGICO DA ROTINA (oferta R$47) ===== */
     .produto-bubble {
       padding: 0 !important; overflow: hidden; width: min(340px, 85vw);
-      background: linear-gradient(165deg, #1b1130 0%, #2c1652 55%, #190e30 100%) !important;
-      border: 1px solid rgba(161, 85, 242, .35);
-      box-shadow: 0 16px 44px rgba(124, 58, 237, .28);
+      background: linear-gradient(165deg, #142a20 0%, #1c3a2c 55%, #0f2018 100%) !important;
+      border: 1px solid rgba(184, 135, 74, .35);
+      box-shadow: 0 16px 44px rgba(28, 58, 44, .32);
       border-radius: var(--radius);
       animation: produtoIn .6s cubic-bezier(.22,1,.36,1) both;
     }
@@ -479,7 +382,7 @@
     .pr-body { padding: 18px 18px 17px; position: relative; }
     .pr-glow {
       position: absolute; top: -50px; right: -50px; width: 180px; height: 180px;
-      border-radius: 50%; background: radial-gradient(circle, rgba(184,118,255,.38), transparent 68%);
+      border-radius: 50%; background: radial-gradient(circle, rgba(212,165,102,.35), transparent 68%);
       pointer-events: none;
     }
     .pr-badge {
@@ -489,37 +392,45 @@
       padding: 5px 11px; border-radius: 99px;
     }
     .pr-kicker { margin-top: 14px; font-size: 11px; letter-spacing: .3em; color: #e3c06b; font-weight: 700; }
-    .pr-title { font-size: 27px; line-height: 1.08; font-weight: 800; color: #fff; margin-top: 4px; }
+    .pr-title { font-size: 25px; line-height: 1.12; font-weight: 800; color: #fff; margin-top: 4px; }
     .pr-sub { font-size: 12.5px; color: rgba(255,255,255,.78); margin-top: 8px; line-height: 1.5; }
     .pr-sub b { color: #fff; }
     .pr-stack { margin-top: 15px; display: flex; flex-direction: column; gap: 7px; position: relative; }
     .pr-item {
       background: rgba(255,255,255,.97); border-radius: 10px; padding: 9px 12px;
       display: flex; align-items: center; gap: 9px;
-      font-size: 12px; font-weight: 600; color: #241a38;
-      box-shadow: 0 4px 14px rgba(0,0,0,.28); text-align: left;
+      font-size: 12px; font-weight: 600; color: #24291f;
+      box-shadow: 0 4px 14px rgba(0,0,0,.22); text-align: left;
     }
     .pr-item .n { background: var(--gradient); color: #fff; font-size: 10px; font-weight: 800; border-radius: 6px; padding: 3px 6px; flex-shrink: 0; }
-    .pr-item.blur { filter: blur(3px); opacity: .8; }
-    .pr-mais { position: absolute; bottom: -5px; left: 0; right: 0; display: flex; justify-content: center; }
-    .pr-mais span {
-      background: rgba(15,10,28,.88); border: 1px solid rgba(184,118,255,.45);
-      color: #ecdfff; backdrop-filter: blur(4px);
-      font-size: 11.5px; font-weight: 700; padding: 6px 15px; border-radius: 99px;
-    }
     .pr-foot {
       margin-top: 18px; display: flex; align-items: baseline; justify-content: center; gap: 8px;
       font-size: 13px; color: rgba(255,255,255,.82);
     }
-    .pr-foot s { color: rgba(255,255,255,.42); }
-    .pr-foot b { color: #7ef0a5; font-size: 16px; letter-spacing: .03em; }
-    .produto-img { width: 100%; display: block; }
+    .pr-foot b { color: #f0cd86; font-size: 18px; letter-spacing: .03em; }
+    .pr-cta {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin: 4px 18px 18px; padding: 14px; border-radius: 12px; border: none; cursor: pointer;
+      background: var(--gradient-gold); color: #3c2503; font-family: inherit;
+      font-size: 14.5px; font-weight: 800; text-decoration: none;
+      box-shadow: 0 6px 20px rgba(212,165,102,.35); transition: transform .15s;
+    }
+    .pr-cta:active { transform: scale(.97); }
+
+    /* ===== BLOCO DE PILARES PRIORITÁRIOS ===== */
+    .pilar-item { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; }
+    .pilar-item .pi-num {
+      flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%;
+      background: var(--accent-soft); color: var(--accent-dark);
+      font-size: 11.5px; font-weight: 800; display: flex; align-items: center; justify-content: center;
+    }
+    .pilar-item b { display: block; font-size: 13.5px; color: var(--text); }
+    .pilar-item i { font-style: normal; font-size: 12.5px; color: var(--text-muted); line-height: 1.4; }
 
     @media (max-width: 560px) {
       .bubble { max-width: 88%; font-size: 14.5px; }
       .progress-track { max-width: none; }
       .chip { padding: 10px 15px; font-size: 13.5px; }
-      .reel-card { flex-basis: 104px; height: 162px; }
     }
   </style>
 </head>
@@ -528,10 +439,9 @@
   <header>
     <div class="topbar">
       <div class="brand">
-        <span class="brand-badge"><img src="logo.png" alt="Core Audience"></span>
-        <span class="brand-sub">Diagnóstico de Crescimento Orgânico</span>
+        <span class="brand-badge"><img src="logo.jpg" alt="Programa Cuidado Seguro por Patrícia Sena"></span>
       </div>
-      <div class="step-pill" id="stepPill">0 de 8</div>
+      <div class="step-pill" id="stepPill">0 de 18</div>
     </div>
     <div class="progress-line"><i id="progressFill"></i></div>
   </header>
@@ -556,10 +466,9 @@
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
         </button>
       </div>
-      <div class="reels" id="reels"></div>
       <div class="chips" id="chips"></div>
       <p class="input-hint" id="hint"></p>
-      <p class="lgpd" id="lgpd">Ao continuar, você concorda que seus dados sejam usados para entrarmos em contato sobre o seu diagnóstico. Seus dados estão protegidos (LGPD).</p>
+      <p class="lgpd" id="lgpd">Ao continuar, você concorda que seus dados sejam usados para entrarmos em contato sobre o seu resultado. Seus dados estão protegidos (LGPD).</p>
     </div>
   </div>
 
@@ -567,9 +476,9 @@
 
 <script>
 /* ================================================================
-   SEGURANÇA: todo dado vindo do usuário OU de APIs externas
-   (Apify/Claude) passa por esc() antes de entrar em qualquer
-   template HTML. Os templates em si são estáticos deste arquivo.
+   SEGURANÇA: todo dado vindo do usuário passa por esc() antes de
+   entrar em qualquer template HTML. Os templates em si são
+   estáticos deste arquivo.
    ================================================================ */
 const esc = (s) => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
@@ -577,19 +486,15 @@ const esc = (s) => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').re
    CONFIG — ajuste aqui antes de publicar
    ================================================================ */
 const CONFIG = {
-  WHATSAPP_NUMERO: '5511999999999',      // <-- SEU número com DDI+DDD, só dígitos
-  AVATAR_URL: 'fabio.jpg',                // foto do Fabio (cai no logo.png se o arquivo não existir)
-  AVATAR_FALLBACK: 'logo.png',
-  PRODUTO_IMG: '',                        // <-- opcional: imagem real do template (ex: 'template-30-reels.png'). Vazio = mockup nativo
+  WHATSAPP_NUMERO: '5511912122996',       // <-- seu número com DDI+DDD, só dígitos
+  AVATAR_URL: 'patricia.jpg',             // <-- foto da Patrícia (cai no logo.jpg se o arquivo não existir)
+  AVATAR_FALLBACK: 'logo.jpg',
+  PRODUTO_CHECKOUT_URL: '',               // <-- link de checkout do Painel (Kiwify/Hotmart/Stripe...). Vazio = botão abre WhatsApp
   API_SAVE: '/api/save-lead',
-  API_PROFILE: '/api/instagram-profile',  // Apify assíncrono (start+poll)
-  API_DIAGNOSIS: '/api/ai-diagnosis',     // Método CORE via Claude — fallback p/ template local
-  API_AGENDA: '/api/agenda',              // motor Cal.com invisível (slots/booking reais) — fallback p/ AGENDA local
-  CAL_EMBED_BASE: '', // não usado: o embed deriva a base do embedLink do backend (instância fora do repo)
-  API_TRANSCRIBE: '/api/transcribe-reel', // transcrição do áudio do reel (Apify) — fallback p/ legenda
-  API_FB_EVENT: '/api/fb-event',          // Meta CAPI (servidor) — evento Lead 10k+ (médico e audience), deduplicado com o Pixel
-  /* Agenda inline (estilo Viver de IA) — o horário escolhido cai no
-     Supabase (status 'agendado' + agendamento_em) pro seu time confirmar */
+  API_AGENDA: '/api/agenda',              // motor Cal.com invisível pra consultoria — fallback pra AGENDA local
+  API_FB_EVENT: '/api/fb-event',          // Meta CAPI (servidor) — deduplicado com o Pixel
+  /* Agenda inline pra consultoria — o horário escolhido cai no Supabase
+     (status 'agendado' + agendamento_em) pro seu time confirmar */
   AGENDA: {
     diasSemana: [1, 2, 3, 4, 5],          // 0=dom ... 6=sáb
     horarios: ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'],
@@ -599,79 +504,191 @@ const CONFIG = {
 };
 
 /* ================================================================
-   SCORING — REGRA DE QUALIFICAÇÃO (ajuste fino é seu, Fabio)
+   AS 7 PERGUNTAS QUE DEFINEM OS 7 PILARES DA PRESERVAÇÃO
    ================================================================ */
-const PONTOS_SEGUIDORES = {
-  'Menos de 1 mil': 1, '1 a 5 mil': 2, '5 a 20 mil': 3,
-  '20 a 50 mil': 4, '50 a 100 mil': 5, 'Mais de 100 mil': 6,
+const PILARES = {
+  cerebral:   { nome: 'Rotina cerebral',               resumo: 'Sono, previsibilidade, orientação e estabilidade do dia.' },
+  movimento:  { nome: 'Movimento',                     resumo: 'Imobilidade, força, marcha e risco de perda funcional.' },
+  nutricao:   { nome: 'Nutrição e hidratação',          resumo: 'Consumo alimentar, líquidos, perda de peso e sinais de dificuldade.' },
+  cognicao:   { nome: 'Cognição e comunicação',         resumo: 'Memória, comportamento, comunicação e estímulo mental.' },
+  participacao: { nome: 'Participação e propósito',    resumo: 'Autonomia, decisões, interesse e papel ativo na vida.' },
+  ambiente:   { nome: 'Ambiente seguro',                resumo: 'Riscos da casa, quedas e barreiras à independência.' },
+  gestao:     { nome: 'Gestão estratégica do cuidado',  resumo: 'Organização familiar, prevenção e capacidade de resposta.' },
 };
-const PONTOS_FATURAMENTO = {
-  'Até R$5 mil/mês': 1, 'R$5 a 10 mil/mês': 2, 'R$10 a 20 mil/mês': 4,
-  'R$20 a 50 mil/mês': 6, 'Acima de R$50 mil/mês': 8,
-};
-const DESAFIOS_DE_CONVERSAO = ['Não converto em vendas', 'Seguidores não engajam'];
-
-function calcularScore(d) {
-  let score = (PONTOS_SEGUIDORES[d.seguidores] || 0) + (PONTOS_FATURAMENTO[d.faturamento] || 0);
-  if (DESAFIOS_DE_CONVERSAO.includes(d.desafio)) score += 1;
-  return score;
-}
-const QUALIFICADO_MIN = 6;
-
-function followersToFaixa(n) {
-  if (n < 1000) return 'Menos de 1 mil';
-  if (n < 5000) return '1 a 5 mil';
-  if (n < 20000) return '5 a 20 mil';
-  if (n < 50000) return '20 a 50 mil';
-  if (n < 100000) return '50 a 100 mil';
-  return 'Mais de 100 mil';
-}
 
 /* ================================================================
-   DDD → ESTADO + mensagem regional
+   10 PERGUNTAS DE AVALIAÇÃO — pontuação ponderada (máximo 28 pontos)
+   Cada resposta soma pontos ao(s) pilar(es) relacionado(s).
    ================================================================ */
-const DDD_UF = {
-  11:'SP',12:'SP',13:'SP',14:'SP',15:'SP',16:'SP',17:'SP',18:'SP',19:'SP',
-  21:'RJ',22:'RJ',24:'RJ',27:'ES',28:'ES',
-  31:'MG',32:'MG',33:'MG',34:'MG',35:'MG',37:'MG',38:'MG',
-  41:'PR',42:'PR',43:'PR',44:'PR',45:'PR',46:'PR',
-  47:'SC',48:'SC',49:'SC',
-  51:'RS',53:'RS',54:'RS',55:'RS',
-  61:'DF',62:'GO',64:'GO',63:'TO',65:'MT',66:'MT',67:'MS',68:'AC',69:'RO',
-  71:'BA',73:'BA',74:'BA',75:'BA',77:'BA',79:'SE',
-  81:'PE',87:'PE',82:'AL',83:'PB',84:'RN',85:'CE',88:'CE',86:'PI',89:'PI',
-  91:'PA',93:'PA',94:'PA',92:'AM',97:'AM',95:'RR',96:'AP',98:'MA',99:'MA',
-};
-const MSG_UF = {
-  SP: 'São Paulo — o mercado mais disputado de atenção do Brasil. Quem aparece com estratégia aqui fecha cliente toda semana.',
-  RJ: 'Rio de Janeiro — terra de marca pessoal forte. Perfil carioca com posicionamento certo vira referência rápido.',
-  MG: 'Minas Gerais — público fiel como poucos. Perfil mineiro que gera confiança transforma seguidor em cliente de anos.',
-  ES: 'Espírito Santo — mercado em alta e pouca gente fazendo conteúdo sério. Quem se posiciona agora sai anos na frente.',
-  RS: 'Rio Grande do Sul — audiência exigente, mas leal. Conteúdo consistente aí constrói autoridade de verdade.',
-  SC: 'Santa Catarina — um dos públicos com maior poder de compra do país. Perfil forte aí monetiza rápido.',
-  PR: 'Paraná — público pragmático que valoriza quem entrega. Autoridade no digital aí vira contrato fechado.',
-  BA: 'Bahia — alcance orgânico gigante pra quem entende a cultura local. Conteúdo com identidade aí viraliza.',
-  PE: 'Pernambuco — polo criativo do Nordeste. Quem une conteúdo e estratégia aí domina o mercado regional.',
-  CE: 'Ceará — terra de gente criativa e empreendedora. O orgânico aí tem força que anúncio nenhum compra.',
-  AL: 'Alagoas — turismo forte e mercado local aquecido. Perfil com autoridade aí vira referência estadual rápido.',
-  MA: 'Maranhão — mercado digital em plena expansão. Quem constrói audiência agora pega a onda no início.',
-  PB: 'Paraíba — mercado aquecido e concorrência ainda baixa no digital. Janela perfeita pra crescer.',
-  RN: 'Rio Grande do Norte — turismo e serviços bombando. Perfil local forte aí vira máquina de indicação.',
-  SE: 'Sergipe — mercado compacto onde autoridade se espalha rápido. Poucos posts certos mudam o jogo.',
-  PI: 'Piauí — digital crescendo acima da média nacional. Quem planta audiência agora colhe primeiro.',
-  AM: 'Amazonas — Manaus tem um mercado consumidor enorme e pouca gente fazendo conteúdo estratégico.',
-  PA: 'Pará — público engajado e orgulhoso da própria cultura. Conteúdo com identidade local converte muito.',
-  AP: 'Amapá — mercado pouco explorado no digital. Ser o primeiro do seu nicho aí é vantagem real.',
-  RR: 'Roraima — concorrência mínima no digital. Constância básica já coloca você na frente de todo mundo.',
-  RO: 'Rondônia — agro e comércio fortes. Perfil que fala a língua do produtor e do lojista fatura bem.',
-  AC: 'Acre — mercado único onde quem aparece, domina. Pouco conteúdo bom aí já constrói autoridade.',
-  TO: 'Tocantins — economia jovem e em movimento. Audiência construída agora vale ouro em 2 anos.',
-  DF: 'Brasília — renda alta e público que paga por especialista. Autoridade no perfil aí vira ticket alto.',
-  GO: 'Goiás — Goiânia é uma das capitais que mais consome conteúdo no Brasil. Mercado faminto por referência.',
-  MT: 'Mato Grosso — capital do agro. Quem se torna referência digital aí fala com um mercado bilionário.',
-  MS: 'Mato Grosso do Sul — mercado regional forte e fiel. Perfil consistente aí fecha o ano lotado.',
-};
-const MSG_UF_FALLBACK = 'Show! Crescimento orgânico não tem fronteira — o método é o mesmo em qualquer canto.';
+const PERGUNTAS = [
+  {
+    id: 'q1', pilares: ['cerebral'],
+    pergunta: 'Como está a rotina de sono do seu familiar?',
+    opcoes: [
+      { letra: 'A', texto: 'Dorme e acorda aproximadamente nos mesmos horários todos os dias.', pontos: 0 },
+      { letra: 'B', texto: 'Os horários variam bastante durante a semana.', pontos: 1 },
+      { letra: 'C', texto: 'Dorme muito durante o dia, fica acordado à noite ou trocou o dia pela noite.', pontos: 2 },
+    ],
+  },
+  {
+    id: 'q2', pilares: ['movimento'],
+    pergunta: 'Como ele passa a maior parte do dia?',
+    opcoes: [
+      { letra: 'A', texto: 'Alterna momentos sentado com caminhadas e atividades.', pontos: 0 },
+      { letra: 'B', texto: 'Passa bastante tempo sentado, mas ainda realiza algumas atividades.', pontos: 2 },
+      { letra: 'C', texto: 'Permanece quase todo o dia sentado ou deitado.', pontos: 4 },
+    ],
+  },
+  {
+    id: 'q3', pilares: ['movimento', 'ambiente'],
+    pergunta: 'Como está a capacidade de levantar e caminhar?',
+    opcoes: [
+      { letra: 'A', texto: 'Levanta e caminha sozinho, com segurança.', pontos: 0 },
+      { letra: 'B', texto: 'Está mais lento, precisa se apoiar ou demonstra insegurança.', pontos: 1 },
+      { letra: 'C', texto: 'Precisa da ajuda de outra pessoa para levantar ou caminhar.', pontos: 2 },
+    ],
+  },
+  {
+    id: 'q4', pilares: ['cerebral', 'cognicao'],
+    pergunta: 'Você percebe mudanças na memória ou no comportamento?',
+    opcoes: [
+      { letra: 'A', texto: 'Não percebi mudanças importantes.', pontos: 0 },
+      { letra: 'B', texto: 'Está mais esquecido, repetitivo, apático ou desanimado.', pontos: 2 },
+      { letra: 'C', texto: 'Apresenta confusão, desorientação ou mudanças importantes de comportamento.', pontos: 4 },
+    ],
+  },
+  {
+    id: 'q5', pilares: ['participacao'],
+    pergunta: 'Como está a participação dele na própria rotina?',
+    opcoes: [
+      { letra: 'A', texto: 'Continua tomando decisões e participa espontaneamente.', pontos: 0 },
+      { letra: 'B', texto: 'Participa apenas quando alguém incentiva.', pontos: 1 },
+      { letra: 'C', texto: 'Outras pessoas fazem praticamente tudo por ele.', pontos: 2 },
+    ],
+  },
+  {
+    id: 'q6', pilares: ['nutricao'],
+    pergunta: 'Como está a alimentação e a hidratação?',
+    opcoes: [
+      { letra: 'A', texto: 'Alimenta-se bem e bebe líquidos regularmente.', pontos: 0 },
+      { letra: 'B', texto: 'Come menos ou precisa ser lembrado de beber água.', pontos: 1 },
+      { letra: 'C', texto: 'Perdeu peso, come muito pouco ou apresenta baixa ingestão de líquidos.', pontos: 2 },
+    ],
+  },
+  {
+    id: 'q7', pilares: ['cognicao', 'participacao'],
+    pergunta: 'Como está a vida social e o contato com outras pessoas?',
+    opcoes: [
+      { letra: 'A', texto: 'Conversa, recebe visitas ou sai de casa com frequência.', pontos: 0 },
+      { letra: 'B', texto: 'Sai pouco ou reduziu bastante as interações.', pontos: 1 },
+      { letra: 'C', texto: 'Está isolado e praticamente não participa da vida social.', pontos: 2 },
+    ],
+  },
+  {
+    id: 'q8', pilares: ['movimento', 'ambiente', 'gestao'],
+    pergunta: 'Nos últimos 12 meses, aconteceu alguma dessas situações?',
+    opcoes: [
+      { letra: 'A', texto: 'Nenhuma queda, infecção importante ou internação.', pontos: 0 },
+      { letra: 'B', texto: 'Houve um episódio isolado.', pontos: 2 },
+      { letra: 'C', texto: 'Houve quedas repetidas, infecções frequentes, internações ou piora importante depois desses eventos.', pontos: 4 },
+    ],
+  },
+  {
+    id: 'q9', pilares: ['ambiente'],
+    pergunta: 'O ambiente da casa favorece a autonomia e a segurança?',
+    opcoes: [
+      { letra: 'A', texto: 'A casa facilita a movimentação e apresenta poucos riscos.', pontos: 0 },
+      { letra: 'B', texto: 'Existem alguns obstáculos ou pontos de risco.', pontos: 1 },
+      { letra: 'C', texto: 'A casa dificulta a independência e apresenta vários riscos.', pontos: 2 },
+    ],
+  },
+  {
+    id: 'q10', pilares: ['cerebral', 'gestao'],
+    pergunta: 'Se amanhã seu familiar piorasse, sua família saberia exatamente como agir?',
+    opcoes: [
+      { letra: 'A', texto: 'Sim. Temos rotina organizada, responsabilidades definidas e sabemos o que observar.', pontos: 0 },
+      { letra: 'B', texto: 'Temos algumas orientações, mas ainda sentimos insegurança.', pontos: 2 },
+      { letra: 'C', texto: 'Não. Normalmente só agimos quando acontece uma emergência.', pontos: 4 },
+    ],
+  },
+];
+
+/* ================================================================
+   5 PERGUNTAS DE QUALIFICAÇÃO — não alteram o score clínico-funcional,
+   servem pra segmentar a comunicação e priorizar leads pra consultoria.
+   ================================================================ */
+const QUALIFICACAO = [
+  {
+    id: 'parentesco',
+    pergunta: 'Qual é o seu grau de parentesco com o idoso?',
+    opcoes: ['Filho(a)', 'Cônjuge', 'Neto(a)', 'Outro familiar', 'Cuidador ou responsável'],
+  },
+  {
+    id: 'investimento',
+    pergunta: 'Hoje, quanto a família investe mensalmente no cuidado desse idoso?',
+    opcoes: ['Até R$ 1.000', 'De R$ 1.001 a R$ 3.000', 'De R$ 3.001 a R$ 7.000', 'De R$ 7.001 a R$ 15.000', 'Acima de R$ 15.000'],
+  },
+  {
+    id: 'quemCuida',
+    pergunta: 'Quem participa do cuidado atualmente?',
+    opcoes: ['Apenas familiares', 'Familiar e cuidador informal', 'Cuidador profissional durante o dia', 'Equipe 24 horas', 'Instituição ou serviço de home care'],
+  },
+  {
+    id: 'preocupacao',
+    pergunta: 'Qual é a maior preocupação da família neste momento?',
+    opcoes: ['Quedas e perda de mobilidade', 'Memória, confusão ou comportamento', 'Alimentação, hidratação ou perda de peso', 'Falta de rotina e ociosidade', 'Sobrecarga e desorganização familiar', 'Não sei exatamente o que está acontecendo'],
+  },
+  {
+    id: 'urgencia',
+    pergunta: 'Em quanto tempo você deseja começar a reorganizar esse cuidado?',
+    opcoes: ['Imediatamente', 'Nos próximos 30 dias', 'Nos próximos 3 meses', 'Estou apenas buscando informações'],
+  },
+];
+
+const TOTAL_STEPS = 3 + PERGUNTAS.length + QUALIFICACAO.length; // nome+whats+email + 10 + 5 = 18
+
+/* ================================================================
+   CLASSIFICAÇÃO DO RESULTADO (score 0–28)
+   ================================================================ */
+const CLASSIFICACOES = [
+  {
+    min: 0, max: 5, nome: 'Capacidades preservadas',
+    mensagem: 'A rotina apresenta boa base de preservação. O foco é manter capacidades e agir diante de pequenas mudanças.',
+    texto: 'Seu familiar mantém uma boa base de capacidades físicas, cognitivas e sociais. Isso não significa que a rotina deva permanecer no automático. O foco agora é preservar o que ele ainda consegue fazer sozinho, manter previsibilidade e identificar pequenas mudanças antes que evoluam.',
+  },
+  {
+    min: 6, max: 12, nome: 'Declínio silencioso',
+    mensagem: 'Existem sinais que podem estar sendo confundidos com envelhecimento normal. Este é o melhor momento para reorganizar a rotina.',
+    texto: 'Alguns sinais já começaram a aparecer e podem estar sendo chamados de "coisas da idade". Este é o momento mais favorável para agir: reorganizar a rotina agora pode evitar que mudanças discretas se transformem em perda acelerada de autonomia.',
+  },
+  {
+    min: 13, max: 19, nome: 'Alto risco de perda de autonomia',
+    mensagem: 'Há fatores relevantes acelerando o declínio. Sem intervenção, cresce o risco de quedas, internações e dependência.',
+    texto: 'Seu familiar apresenta fatores importantes que podem estar acelerando a dependência. A rotina precisa deixar de ser apenas uma sequência de cuidados e passar a ser uma estratégia de preservação, com prioridades claras para movimento, cognição, participação, nutrição e segurança.',
+  },
+  {
+    min: 20, max: 28, nome: 'O cuidado precisa ser reorganizado',
+    mensagem: 'Múltiplas áreas estão vulneráveis e exigem prioridade. Ainda há capacidades a preservar, mas a família precisa agir com direção.',
+    texto: 'O resultado indica vulnerabilidade em múltiplas áreas. Isso não significa que não exista mais o que fazer. Significa que a família precisa parar de agir apenas diante das emergências e começar a proteger, de forma organizada, as capacidades que ainda estão presentes.',
+  },
+];
+function classificar(score) {
+  return CLASSIFICACOES.find(c => score >= c.min && score <= c.max) || CLASSIFICACOES[0];
+}
+function calcularScore() {
+  return Object.values(state.data.respostas || {}).reduce((s, r) => s + (r.pontos || 0), 0);
+}
+function pilaresPrioritarios() {
+  const lista = Object.entries(PILARES).map(([id, p]) => {
+    const total = Object.entries(state.data.respostas || {}).reduce((s, [qid, r]) => {
+      const pergunta = PERGUNTAS.find(pg => pg.id === qid);
+      return s + (pergunta && pergunta.pilares.includes(id) ? (r.pontos || 0) : 0);
+    }, 0);
+    return { id, nome: p.nome, resumo: p.resumo, total };
+  });
+  lista.sort((a, b) => b.total - a.total);
+  return lista.slice(0, 3);
+}
 
 /* ================================================================
    CORREÇÃO DE TYPO DE E-MAIL
@@ -690,100 +707,23 @@ function sugerirEmail(email) {
   return null;
 }
 
-/* ================================================================
-   OPÇÕES DAS ETAPAS
-   ================================================================ */
-const NICHOS = ['Saúde & Bem-estar','Estética & Beleza','Fitness','Direito','Finanças & Investimentos','Educação & Concursos','Moda','Gastronomia & Food','Imobiliário','Marketing & Negócios','Serviços locais','Outro'];
-const SEGUIDORES = Object.keys(PONTOS_SEGUIDORES);
-const DESAFIOS = ['Alcance baixo (views travadas)','Falta de constância','Não sei o que postar','Seguidores não engajam','Não converto em vendas','Estou começando do zero'];
-const FATURAMENTOS = Object.keys(PONTOS_FATURAMENTO);
-
-/* Templates de diagnóstico v1 (fallback final qdo NÃO houve pré-diagnóstico).
-   Recebem dados JÁ ESCAPADOS via safeData(). */
-const DIAGNOSTICOS = {
-  'Alcance baixo (views travadas)': (s) =>
-    `<b>${s.primeiro}</b>, views travadas no <b>@${s.instagram}</b> quase nunca são "punição do algoritmo" — são sintoma de conteúdo que não segura os 3 primeiros segundos. No nicho de <b>${s.nicho}</b>, o perfil que domina gancho e retenção cresce mesmo postando menos.<br><br>Com ${s.seguidores} de base, seu próximo salto não vem de postar mais — vem de reestruturar o formato do conteúdo pra ser distribuído pra quem ainda não te segue.`,
-  'Falta de constância': (s) =>
-    `<b>${s.primeiro}</b>, a falta de constância no <b>@${s.instagram}</b> raramente é preguiça — é falta de sistema. Quem depende de inspiração posta 3x numa semana e some na outra, e o perfil paga o preço no alcance.<br><br>No nicho de <b>${s.nicho}</b>, um sistema simples de produção em lote resolve: 1 dia de gravação rende 2 semanas de conteúdo. Constância vira consequência, não esforço.`,
-  'Não sei o que postar': (s) =>
-    `<b>${s.primeiro}</b>, ficar sem ideia de conteúdo pro <b>@${s.instagram}</b> é o sinal clássico de quem ainda não mapeou as dores da própria audiência. No nicho de <b>${s.nicho}</b>, existem perguntas que seu público faz TODO dia — cada uma delas é um post pronto.<br><br>Com um banco de conteúdo estruturado por linhas editoriais, você nunca mais abre o app sem saber o que postar — e cada post passa a ter função no funil.`,
-  'Seguidores não engajam': (s) =>
-    `<b>${s.primeiro}</b>, audiência calada no <b>@${s.instagram}</b> geralmente significa uma coisa: conteúdo que informa, mas não conversa. Seguidor engaja quando se enxerga no post — e no nicho de <b>${s.nicho}</b> isso vem de história e posicionamento, não de mais dica.<br><br>Com ${s.seguidores} de base, você já tem massa crítica. O trabalho agora é transformar seguidor passivo em comunidade que comenta, compartilha e compra.`,
-  'Não converto em vendas': (s) =>
-    `<b>${s.primeiro}</b>, atrair seguidor e não converter é o gargalo mais caro que existe — porque o público já está aí. No <b>@${s.instagram}</b>, o que falta não é alcance: é uma esteira que transforme atenção em conversa e conversa em venda.<br><br>No nicho de <b>${s.nicho}</b>, perfis com ${s.seguidores} já sustentam faturamento consistente quando o conteúdo tem chamada certa e o direct tem processo. É ajuste de funil, não de frequência.`,
-  'Estou começando do zero': (s) =>
-    `<b>${s.primeiro}</b>, começar do zero no <b>@${s.instagram}</b> hoje é mais rápido do que era há 3 anos — o alcance pra contas novas nunca distribuiu tanto pra não-seguidores. A armadilha é copiar quem já é grande em <b>${s.nicho}</b> em vez de fazer o que funciona pra quem está começando.<br><br>Os primeiros 5 mil seguidores vêm de clareza de posicionamento + formato validado. Com isso definido, cada post trabalha a seu favor.`,
-};
 function safeData() {
   const d = state.data;
-  return {
-    primeiro: esc((d.nome || '').split(' ')[0]),
-    instagram: esc(d.instagram || ''),
-    nicho: esc(d.nicho || ''),
-    seguidores: esc((d.seguidores || '').toLowerCase()),
-  };
-}
-
-/* Fallback local do Método CORE: notas heurísticas pelos números reais,
-   mesmo formato de placar da versão com IA. Seeds NÃO revelam a solução. */
-const SEEDS_METODO = {
-  1: 'Existem <b>7 Gatilhos da Atenção</b> que todo gancho precisa ativar — e na Sessão Estratégica eu te mostro os melhores pro seu caso.',
-  2: 'Conteúdos que viralizam seguem <b>4 princípios obrigatórios e 7 elementos estratégicos</b> — e sabemos exatamente quais estão faltando no seu.',
-  3: 'Existem <b>3 tipos de CTA estratégico</b> que transformam atenção em resultado real — e sabemos qual funciona melhor pro seu nicho.',
-};
-function tplPreDiag() {
-  const d = state.data;
-  const p = d.profile || {};
-  const r = d.reel;
-  const s = safeData();
-  const f = p.followersCount || 0;
-  const cap = (r && r.caption) || '';
-
-  // notas heurísticas (critérios do método aplicados aos números)
-  const ratio = r && r.views != null && f > 0 ? r.views / f : null;
-  const engPct = r && f > 0 ? (((r.likes || 0) + (r.comments || 0)) / f) * 100 : null;
-  const n1 = ratio == null ? 5 : ratio >= 2 ? 8 : ratio >= 1 ? 7 : ratio >= 0.5 ? 5 : ratio >= 0.2 ? 4 : 3;
-  const n2 = engPct == null ? 5 : engPct >= 3 ? 8 : engPct >= 1 ? 6 : engPct >= 0.5 ? 5 : 4;
-  const temIsca = /coment[ae]|comenta ['"“]?\w+/i.test(cap);
-  const temCtaGenerico = /link|bio|salv|compartilh|segue|me siga|arrast/i.test(cap);
-  const n3 = temIsca ? 7 : temCtaGenerico ? 5 : 2;
-  const geral = ((n1 + n2 + n3) / 3).toFixed(1).replace('.', ',');
-
-  const t1 = `<b>${s.primeiro}</b>, olhando o <b>@${s.instagram}</b>: ${fmtNum(f)} seguidores e ${fmtNum(p.postsCount || 0)} publicações.` +
-    (p.externalUrl ? '' : ' E está <b>sem link na bio</b> — atenção gerada sem destino.') +
-    (p.biography ? '' : ' A bio vazia não diz em 3 segundos por que seguir você.');
-
-  const v1 = ratio == null
-    ? 'Sem métricas do reel pra avaliar o gancho — o que já indica espaço pra estruturar a abertura pelos gatilhos do método.'
-    : ratio >= 1
-      ? `${fmtNum(r.views)} views (${ratio.toFixed(1).replace('.', ',')}x a base): o gancho está furando a bolha — agora é refinar pra escalar.`
-      : `${fmtNum(r.views)} views pra ${fmtNum(f)} de base (${ratio.toFixed(2).replace('.', ',')}x): a abertura não ativa nenhum gatilho — o algoritmo não distribui além de quem já te segue.`;
-
-  const fim = `O problema não é o seu conteúdo, <b>${s.primeiro}</b> — é a estrutura do gancho. ${SEEDS_METODO[1]}`;
-
-  // heurística do gatilho ausente: alcance preso → Atenção Imediata; alcance ok mas eng. frio → Recompensa
-  const gatilho = (ratio != null && ratio < 1) ? 'Atenção Imediata' : 'Recompensa';
-
-  return {
-    html: t1 +
-      `<br><br><b>Score CORE do reel: ${geral}/10</b>` +
-      `<br><br>⚡ <b>Gatilho da Atenção — ${n1}/10</b><br>${v1}` +
-      `<br><br>${fim}`,
-    notas: { notavel: n2, cta: n3 },
-    gatilho,
-  };
+  return { primeiro: esc((d.nome || '').split(' ')[0]) };
 }
 
 /* ================================================================
    ESTADO + PERSISTÊNCIA
    ================================================================ */
-const SKEY = 'core_diag_ig_v2';
+const SKEY = 'cuidado_seguro_scanner_v1';
 let state = { step: 0, data: {}, leadRef: null, done: false };
 try {
   const saved = JSON.parse(localStorage.getItem(SKEY) || 'null');
-  if (saved && saved.leadRef && !saved.done) state = saved;
+  if (saved && saved.leadRef) state = saved;
 } catch (e) {}
 if (!state.leadRef) state.leadRef = 'lr_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 9);
+if (!state.data.respostas) state.data.respostas = {};
+if (!state.data.qualificacao) state.data.qualificacao = {};
 function persist() { try { localStorage.setItem(SKEY, JSON.stringify(state)); } catch (e) {} }
 
 /* captura UTMs/click-id da URL de entrada — 1x, e persiste no state (sobrevive
@@ -809,11 +749,10 @@ function persist() { try { localStorage.setItem(SKEY, JSON.stringify(state)); } 
    ================================================================ */
 const $ = (id) => document.getElementById(id);
 const chat = $('chat'), main = $('main'), input = $('input'), sendBtn = $('sendBtn');
-const chipsEl = $('chips'), reelsEl = $('reels'), wrapEl = $('inputWrap'), labelEl = $('fieldLabel');
+const chipsEl = $('chips'), wrapEl = $('inputWrap'), labelEl = $('fieldLabel');
 const prefixEl = $('prefix'), hintEl = $('hint'), lgpdEl = $('lgpd');
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const scrollDown = () => { main.scrollTo({ top: main.scrollHeight, behavior: 'smooth' }); };
-const fmtNum = (n) => n == null ? '—' : new Intl.NumberFormat('pt-BR', { notation: 'compact', maximumFractionDigits: 1 }).format(n);
 
 let lastSide = null;
 /* avatar com fallback: foto → logo (classe is-logo ajusta o encaixe) */
@@ -850,78 +789,23 @@ async function bot(html, { delay = 900 } = {}) {
 }
 const user = (text) => addRow('user', esc(text));
 
-/* ================================================================
-   LOADER DE RETENÇÃO — card com etapas + barra (cargas longas).
-   Os passos avançam por timer e o último segura até o done().
-   titulo/steps: strings estáticas deste arquivo (handle já escapado).
-   ================================================================ */
-function showLoader(titulo, steps, intervalMs = 5000) {
-  const row = document.createElement('div');
-  row.className = `row bot${lastSide === 'bot' ? ' cont' : ''}`;
-  const stepsHtml = steps.map((t, i) =>
-    `<div class="lstep${i === 0 ? ' doing' : ''}"><span class="ic"></span><span>${t}</span></div>`
-  ).join('');
-  row.innerHTML =
-    avatarHtml() +
-    `<div class="bubble loader-card"><div class="loader-title">${titulo}</div>` +
-    `<div class="loader-steps">${stepsHtml}</div>` +
-    `<div class="loader-bar"><i></i></div></div>`;
-  chat.appendChild(row);
-  lastSide = 'bot';
-  scrollDown();
-
-  const bar = row.querySelector('.loader-bar i');
-  const els = [...row.querySelectorAll('.lstep')];
-  let cur = 0;
-  const setBar = () => { bar.style.width = Math.min(10 + ((cur + 0.5) / steps.length) * 80, 92) + '%'; };
-  requestAnimationFrame(setBar);
-
-  const timer = setInterval(() => {
-    if (cur >= steps.length - 1) return; // segura no último passo até resolver
-    els[cur].classList.remove('doing'); els[cur].classList.add('ok');
-    els[cur].querySelector('.ic').textContent = '✓';
-    cur++;
-    els[cur].classList.add('doing');
-    setBar(); scrollDown();
-  }, intervalMs);
-
-  return {
-    async done() {
-      clearInterval(timer);
-      els.forEach(e => {
-        e.classList.remove('doing'); e.classList.add('ok');
-        e.querySelector('.ic').textContent = '✓';
-      });
-      bar.style.width = '100%';
-      await sleep(550);
-      row.style.transition = 'opacity .35s, transform .35s';
-      row.style.opacity = '0'; row.style.transform = 'translateY(-8px)';
-      await sleep(360);
-      row.remove();
-      lastSide = null;
-    },
-  };
-}
-
 /* progress header */
 function setProgress(n) {
   const pill = $('stepPill');
-  pill.textContent = `${n} de 8`;
+  pill.textContent = `${n} de ${TOTAL_STEPS}`;
   pill.classList.remove('bump'); void pill.offsetWidth;
   pill.classList.add('bump');
-  $('progressFill').style.width = (n / 8 * 100) + '%';
+  $('progressFill').style.width = (n / TOTAL_STEPS * 100) + '%';
 }
 
 /* input dock modes — o dock é inline: sempre vai pro fim do chat,
    logo abaixo da última pergunta */
 const dockEl = $('dock');
-const selWrap = $('selectWrap'), selEl = $('selectEl'), selBtn = $('selectBtn');
 let onSubmit = null;
 function ensureDockLast() { chat.appendChild(dockEl); }
 function hideDock() {
   wrapEl.classList.remove('show'); labelEl.classList.remove('show');
-  chipsEl.classList.remove('show'); reelsEl.classList.remove('show');
-  selWrap.classList.remove('show');
+  chipsEl.classList.remove('show');
   hintEl.textContent = '';
 }
 function askText({ label, placeholder, prefix = '', type = 'text', mask = null, validate, onOk, ddiSelect = false }) {
@@ -975,46 +859,6 @@ function askChips(options, onPick) {
   chipsEl.classList.add('show');
   scrollDown();
 }
-function askReels(reels, onPick) {
-  hideDock(); ensureDockLast();
-  reelsEl.textContent = '';
-  reels.forEach((r) => {
-    const c = document.createElement('button');
-    c.className = 'reel-card';
-    if (r.thumb) c.style.backgroundImage = `url("/api/proxy-image?url=${encodeURIComponent(r.thumb)}")`;
-    const v = document.createElement('span');
-    v.className = 'reel-views';
-    v.textContent = r.views != null ? `▶ ${fmtNum(r.views)}` : '🎬 Reel';
-    c.appendChild(v);
-    c.onclick = async () => { hideDock(); await onPick(r); };
-    reelsEl.appendChild(c);
-  });
-  reelsEl.classList.add('show');
-  chipsEl.textContent = '';
-  const skip = document.createElement('button');
-  skip.className = 'chip'; skip.textContent = 'Prefiro pular a análise de reel';
-  skip.onclick = async () => { hideDock(); await onPick(null); };
-  chipsEl.appendChild(skip);
-  chipsEl.classList.add('show');
-  scrollDown();
-}
-/* caixa de seleção p/ perguntas com muitas opções (options são constantes deste arquivo) */
-function askSelect({ label, placeholder, options, onOk }) {
-  hideDock(); ensureDockLast();
-  labelEl.textContent = label; labelEl.classList.add('show');
-  selEl.innerHTML = `<option value="" disabled selected hidden>${placeholder}</option>` +
-    options.map(o => `<option>${o}</option>`).join('');
-  selWrap.classList.add('show');
-  selBtn.classList.remove('ready');
-  selEl.onchange = () => selBtn.classList.toggle('ready', !!selEl.value);
-  selBtn.onclick = async () => {
-    if (!selEl.value) return;
-    const v = selEl.value;
-    hideDock();
-    await onOk(v);
-  };
-  scrollDown();
-}
 
 /* ================================================================
    VALIDAÇÕES
@@ -1023,6 +867,18 @@ const vNome = (v) => {
   const t = v.trim().replace(/\s+/g, ' ');
   if (t.split(' ').length < 2 || t.length < 5) return { ok: false, erro: t.length > 3 ? 'Digite nome e sobrenome 🙂' : '' };
   return { ok: true, valor: t };
+};
+const DDD_UF = {
+  11:'SP',12:'SP',13:'SP',14:'SP',15:'SP',16:'SP',17:'SP',18:'SP',19:'SP',
+  21:'RJ',22:'RJ',24:'RJ',27:'ES',28:'ES',
+  31:'MG',32:'MG',33:'MG',34:'MG',35:'MG',37:'MG',38:'MG',
+  41:'PR',42:'PR',43:'PR',44:'PR',45:'PR',46:'PR',
+  47:'SC',48:'SC',49:'SC',
+  51:'RS',53:'RS',54:'RS',55:'RS',
+  61:'DF',62:'GO',64:'GO',63:'TO',65:'MT',66:'MT',67:'MS',68:'AC',69:'RO',
+  71:'BA',73:'BA',74:'BA',75:'BA',77:'BA',79:'SE',
+  81:'PE',87:'PE',82:'AL',83:'PB',84:'RN',85:'CE',88:'CE',86:'PI',89:'PI',
+  91:'PA',93:'PA',94:'PA',92:'AM',97:'AM',95:'RR',96:'AP',98:'MA',99:'MA',
 };
 const maskFone = (v) => {
   const d = v.replace(/\D/g, '').slice(0, 11);
@@ -1060,28 +916,28 @@ const vEmail = (v) => {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(t)) return { ok: false, erro: '' };
   return { ok: true, valor: t };
 };
-const vInsta = (v) => {
-  const t = v.trim().replace(/^@/, '').replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/[\/\?].*$/, '').toLowerCase();
-  if (!/^[\w.]{2,30}$/.test(t)) return { ok: false, erro: t.length > 1 ? 'Só letras, números, ponto e underline' : '' };
-  return { ok: true, valor: t };
-};
 
 /* ================================================================
    CAPTURA PROGRESSIVA — nunca trava a UX
    ================================================================ */
 function salvarLead(status) {
   const d = state.data;
-  const p = d.profile;
+  const q = d.qualificacao || {};
   fetch(CONFIG.API_SAVE, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       lead_ref: state.leadRef, status,
       nome: d.nome || '', whatsapp: d.whatsapp || '', email: d.email || '',
-      instagram: d.instagram || '', uf: d.uf || '', nicho: d.nicho || '',
-      nicho_detectado: d.nichoDetectado || '',
-      seguidores: d.seguidores || '', dificuldade: d.desafio || '',
-      faturamento: d.faturamento || '', score: d.score ?? null,
+      respostas: d.respostas || {},
+      score: d.score ?? null,
+      classificacao: d.classificacao || '',
+      pilares_prioritarios: d.pilaresPrioritarios || '',
+      parentesco: q.parentesco || '',
+      investimento_mensal: q.investimento || '',
+      quem_cuida: q.quemCuida || '',
+      maior_preocupacao: q.preocupacao || '',
+      urgencia: q.urgencia || '',
       qualificado: d.qualificado ?? null,
       agendado: d.agendado === true,
       agendamento_em: d.agendamentoEm || null,
@@ -1089,14 +945,6 @@ function salvarLead(status) {
       video_url: d.videoUrl || '',
       call_track: d.callTrack || '',
       vendedor: d.vendedor || '',
-      profile: p ? {
-        fullName: p.fullName, biography: p.biography, profilePicUrl: p.profilePicUrl,
-        followersCount: p.followersCount, followsCount: p.followsCount, postsCount: p.postsCount,
-        isBusinessAccount: p.isBusinessAccount, businessCategoryName: p.businessCategoryName,
-        externalUrl: p.externalUrl, verified: p.verified,
-      } : null,
-      reel: d.reel || null,
-      reel_transcript: (d.reelTranscript || '').slice(0, 600),
       utm_source: (d.utm && d.utm.source) || '',
       utm_medium: (d.utm && d.utm.medium) || '',
       utm_campaign: (d.utm && d.utm.campaign) || '',
@@ -1108,28 +956,20 @@ function salvarLead(status) {
   }).catch((e) => console.warn('[lead] salvar falhou (seguindo normal):', e.message));
 }
 
-/* Conversão Meta (Pixel + CAPI) — dispara p/ lead QUALIFICADO 10k+ em ambas
-   as trilhas: premium (médico) e audience (10k+ não-médico). 1x por lead.
-   Evento de Lead puro (SEM valor). Mesmo eventID no Pixel e na CAPI → o Meta
-   deduplica. Hash dos dados e token da CAPI ficam no backend (/api/fb-event). */
-// Eventos Meta (Pixel browser + CAPI server, deduplicados por eventID) — só leads 10k+.
-//  • Lead     → dispara na CLASSIFICAÇÃO (virou closer/audience, logo após reel+renda).
-//               Meta otimiza pelo LEAD QUALIFICADO e captura até quem não agenda.
-//  • Schedule → dispara no AGENDAMENTO (booking confirmado). Mede quem fechou horário.
-// Cada um tem sua própria flag de 1x-por-lead (persistida), então não se atrapalham.
+/* Conversão Meta (Pixel + CAPI) — dispara pra lead ALTO RISCO/URGENTE
+   (o que definimos como "qualificado" neste funil). Evento de Lead puro
+   (SEM valor). Mesmo eventID no Pixel e na CAPI → o Meta deduplica.
+   Hash dos dados e token da CAPI ficam no backend (/api/fb-event). */
 function dispararEventoMeta(eventName, flagKey, contentName) {
   const d = state.data;
-  if (d.callTrack !== 'premium' && d.callTrack !== 'audience') return;  // só 10k+
   if (d[flagKey]) return;                       // evita duplicar (1x por lead)
   d[flagKey] = true; persist();
 
   const eventId = `${eventName.toLowerCase()}_${state.leadRef || 'x'}_${Date.now()}`;
-  const custom = { content_name: contentName, currency: 'BRL' };  // evento de lead/schedule — sem value
+  const custom = { content_name: contentName, currency: 'BRL' };
 
-  // 1) Pixel (navegador)
   try { if (window.fbq) fbq('track', eventName, custom, { eventID: eventId }); } catch (e) {}
 
-  // 2) CAPI (servidor) — mesmo eventID; manda dados p/ matching (hash é no backend)
   const cookie = (n) => (document.cookie.match('(^|;)\\s*' + n + '=([^;]+)') || [])[2] || '';
   postJSON(CONFIG.API_FB_EVENT, {
     event_name: eventName, event_id: eventId, track: d.callTrack,
@@ -1139,17 +979,9 @@ function dispararEventoMeta(eventName, flagKey, contentName) {
     event_source_url: location.href, currency: 'BRL',
   }, 6000);
 }
-function contentNameTrilha() {
-  return state.data.callTrack === 'premium' ? 'Sessão Estratégica (closers)' : 'Call de Raio X';
-}
-// Lead na classificação (lead qualificado 10k+ — mesmo que não agende depois).
-function dispararLeadQualificado() { dispararEventoMeta('Lead', 'leadPixelEnviado', contentNameTrilha()); }
-// Schedule no agendamento (booking confirmado).
-function dispararAgendamento() { dispararEventoMeta('Schedule', 'schedulePixelEnviado', contentNameTrilha()); }
+function dispararLeadQualificado() { if (state.data.qualificado) dispararEventoMeta('Lead', 'leadPixelEnviado', 'Scanner do Envelhecimento — alto risco'); }
+function dispararAgendamento() { dispararEventoMeta('Schedule', 'schedulePixelEnviado', 'Consultoria — Cuidado Seguro'); }
 
-/* ================================================================
-   APIFY — perfil + reels (assíncrono: start + polling)
-   ================================================================ */
 async function postJSON(url, payload, timeoutMs = 9000) {
   try {
     const ctl = new AbortController();
@@ -1165,117 +997,15 @@ async function postJSON(url, payload, timeoutMs = 9000) {
   return null;
 }
 
-async function fetchPerfil(handle) {
-  const start = await postJSON(CONFIG.API_PROFILE, { action: 'start', username: handle });
-  if (!start || start.status !== 'started') return start; // no_key / erro → fluxo manual
-  const t0 = Date.now();
-  while (Date.now() - t0 < 55000) {
-    await sleep(2500);
-    const res = await postJSON(CONFIG.API_PROFILE, { action: 'poll', runId: start.runId, datasetId: start.datasetId });
-    if (res && res.status && res.status !== 'running') return res;
-  }
-  return null; // estourou a paciência → fluxo manual
-}
-
-function renderProfileCard(p) {
-  const pic = p.profilePicUrl ? `/api/proxy-image?url=${encodeURIComponent(p.profilePicUrl)}` : '';
-  addRow('bot', `
-    <div class="pcard">
-      <div class="ppic" style="${pic ? `background-image:url('${pic}')` : ''}"></div>
-      <div class="pinfo">
-        <div class="pname">${esc(p.fullName || '@' + p.username)}${p.verified ? ' <span class="pverif">✓</span>' : ''}</div>
-        <div class="puser">@${esc(p.username)}</div>
-        <div class="pstats">
-          <span><b>${fmtNum(p.followersCount)}</b> seguidores</span>
-          <span><b>${fmtNum(p.postsCount)}</b> posts</span>
-        </div>
-        ${p.businessCategoryName ? `<div class="pcat">${esc(p.businessCategoryName)}</div>` : ''}
-      </div>
-    </div>`, 'pcard-bubble');
-}
-
 /* ================================================================
-   PRÉ-DIAGNÓSTICO — Método CORE via IA com fallback local
-   ================================================================ */
-async function gerarPreDiagnostico() {
-  const d = state.data;
-  try {
-    const ctl = new AbortController();
-    const timer = setTimeout(() => ctl.abort(), 15000);
-    const r = await fetch(CONFIG.API_DIAGNOSIS, {
-      method: 'POST', signal: ctl.signal,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        nome: d.nome, instagram: d.instagram, nicho: d.nicho, uf: d.uf,
-        desafio: d.desafio || '', faturamento: d.faturamento || '',
-        profile: d.profile || null, reel: d.reel || null,
-        transcript: d.reelTranscript || '',
-      }),
-    });
-    clearTimeout(timer);
-    if (r.ok) {
-      const j = await r.json();
-      if (j.ok && j.text) {
-        // escapa TUDO que veio de fora, depois aplica só a formatação nossa
-        return {
-          html: esc(j.text).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>'),
-          notas: j.notas || null,
-          gatilho: j.gatilho || '',
-        };
-      }
-    }
-  } catch (e) { /* segue pro fallback */ }
-  return tplPreDiag();
-}
-
-/* destaque do gatilho principal que faltou no gancho */
-const GATILHOS_VALIDOS = ['Atenção Imediata', 'Recompensa', 'Reconhecimento', 'Crença', 'Popularidade/Autoridade', 'Mistério', 'Disrupção'];
-/* introdução do diagnóstico — explica os 3 pilares antes de mostrar o placar.
-   Texto 100% estático (nenhum dado do lead interpolado) → sem risco de XSS. */
-function blocoContextoMetodo() {
-  return `
-    <div class="metodo-intro">
-      <div class="mi-head">Antes do resultado, deixa eu te situar: o <b>Método CORE</b> mede 3 pilares — é o que separa um reel que viraliza de um que o algoritmo ignora.</div>
-      <div class="mi-pilar"><span class="mi-ic">🎯</span><div><b>Gatilho da Atenção</b><i>fazer a pessoa parar pra te assistir</i></div></div>
-      <div class="mi-pilar"><span class="mi-ic">🔥</span><div><b>Conteúdo Notável</b><i>fazer ela assistir e engajar até o final</i></div></div>
-      <div class="mi-pilar"><span class="mi-ic">🎬</span><div><b>CTA &amp; Conversão</b><i>fazer ela agir e virar cliente do seu produto/serviço</i></div></div>
-      <div class="mi-foot">Vou analisar o <b>Gatilho da Atenção</b> agora 👇 A análise completa dos 3 — com as correções — eu abro na sua <b>Sessão Estratégica</b>.</div>
-    </div>`;
-}
-
-function blocoGatilho(gatilho) {
-  if (!gatilho) return '';
-  const nome = GATILHOS_VALIDOS.find(g => String(gatilho).toLowerCase().includes(g.toLowerCase().split('/')[0])) || String(gatilho).slice(0, 40);
-  return `
-    <div class="gatilho-falta">
-      <span class="gf-ic">🚨</span>
-      <span>O gatilho que mais faltou no seu gancho: <b>Gatilho da ${esc(nome)}</b></span>
-    </div>`;
-}
-
-/* bloco dos 2 pilares trancados — notas visíveis, análise só na sessão */
-function blocoTrancado(notas) {
-  const nota = (n) => n != null ? `${n}/10` : '🔒';
-  const fake = 'A análise completa deste pilar fica disponível na sua sessão com o time — incluindo os ajustes recomendados pro seu perfil e os exemplos aplicados ao seu nicho.';
-  return `
-    <div class="locked">
-      <div class="locked-row"><span>🔥 <b>Conteúdo Notável</b></span><span class="locked-nota">${nota(notas && notas.notavel)}</span></div>
-      <div class="locked-fake">${fake}</div>
-      <div class="locked-row"><span>🎯 <b>CTA & Conversão</b></span><span class="locked-nota">${nota(notas && notas.cta)}</span></div>
-      <div class="locked-fake">${fake}</div>
-      <div class="locked-cta">🔒 As análises completas desses 2 pilares — e as correções — eu abro na sua <b>Sessão Estratégica</b></div>
-    </div>`;
-}
-
-/* ================================================================
-   FLUXO PRINCIPAL — 8 etapas
-   0 nome · 1 whats · 2 email · 3 @ · 4 reel(ou seguidores) ·
-   5 nicho(+pré-diag) · 6 desafio · 7 faturamento · 8 final
+   FLUXO PRINCIPAL
+   0 nome · 1 whats · 2 email · 3-12 as 10 perguntas · 13-17 qualificação · final
    ================================================================ */
 async function etapaNome(replay = false) {
   if (!replay) {
-    await bot('Perfis que aplicam o conteúdo certo estão multiplicando o alcance em até <b>10x</b> e transformando seguidores em <b>vendas</b> — sem investir 1 real em anúncio. Quer descobrir o que está travando o crescimento do seu perfil?', { delay: 1100 });
-    await bot('Bora começar: qual seu nome?');
+    await bot('O envelhecimento fala antes da dependência. Ele aparece quando seu familiar se movimenta menos, perde interesse, troca o dia pela noite, come pior, esquece mais ou deixa que façam tudo por ele — e muita família chama isso de <b>"coisas da idade"</b>, só percebendo a gravidade depois de uma queda, internação ou perda importante de autonomia.', { delay: 1200 });
+    await bot('Eu criei o <b>Scanner do Envelhecimento</b> pra ajudar sua família a identificar esses sinais antes que evoluam. Em poucos minutos você descobre se a rotina do seu familiar está preservando capacidades — ou acelerando o declínio.', { delay: 1400 });
+    await bot('Bora começar: qual é o seu nome?');
   }
   askText({
     label: 'Nome completo', placeholder: 'Digite seu nome e sobrenome...',
@@ -1290,7 +1020,7 @@ async function etapaNome(replay = false) {
 
 async function etapaWhats(replay = false) {
   const primeiro = esc(state.data.nome.split(' ')[0]);
-  if (!replay) await bot(`Prazer, <b>${primeiro}</b>! 👊 Pra eu te enviar o resultado completo do diagnóstico, qual seu WhatsApp?`);
+  if (!replay) await bot(`Prazer, <b>${primeiro}</b>! 👊 Pra eu te enviar o resultado completo do Scanner, qual seu WhatsApp?`);
   askText({
     label: 'WhatsApp', placeholder: '(11) 99999-9999', type: 'tel', mask: maskFoneIntl,
     validate: vFoneIntl, ddiSelect: true,
@@ -1298,12 +1028,12 @@ async function etapaWhats(replay = false) {
       const ddi = foneDDI, isBR = ddi === '55';
       user(isBR ? '🇧🇷 ' + maskFone(fone) : '+' + ddi + ' ' + fone);
       const uf = isBR ? DDD_UF[+fone.slice(0, 2)] : '';
-      state.data.whatsapp = ddi + fone;   // E.164 sem '+' (ddi + número), funciona p/ Cal/CAPI/WhatsApp
+      state.data.whatsapp = ddi + fone;   // E.164 sem '+' (ddi + número)
       state.data.uf = uf || '';
       state.data.paisDDI = ddi;
       state.step = 2; persist(); setProgress(2);
       salvarLead('parcial');
-      await bot(isBR ? (MSG_UF[uf] || MSG_UF_FALLBACK) : 'Show, recebido! 🌎', { delay: 1000 });
+      await bot('Show, recebido! 📲', { delay: 900 });
       await etapaEmail();
     },
   });
@@ -1332,308 +1062,182 @@ async function etapaEmail(replay = false) {
 async function confirmarEmail(email) {
   state.data.email = email; state.step = 3; persist(); setProgress(3);
   salvarLead('contato');
-  await etapaInstagram();
+  await etapaIntroQuiz();
 }
 
-async function etapaInstagram(replay = false) {
-  if (!replay) await bot('Agora a parte boa: qual o <b>@</b> do seu perfil no Instagram? Vou dar uma olhada nele em tempo real 👀', { delay: 800 });
-  askText({
-    label: 'Seu @ do Instagram', placeholder: 'seuperfil', prefix: '@',
-    validate: vInsta,
-    onOk: async (handle) => {
-      user('@' + handle);
-      state.data.instagram = handle; persist();
-      await buscarPerfil(handle);
-    },
+async function etapaIntroQuiz() {
+  await bot('Vou te fazer <b>10 perguntas rápidas</b> sobre a rotina do seu familiar. Não existe certo ou errado — é só pra eu entender onde a rotina está ajudando e onde pode estar acelerando o declínio.', { delay: 1100 });
+  await bot(`
+    <div class="gatilho-falta">
+      <span class="gf-ic">ℹ️</span>
+      <span><b>Importante:</b> o Scanner do Envelhecimento é uma ferramenta educativa e de organização do cuidado. Ele não substitui avaliação médica, gerontológica ou de outros profissionais de saúde.</span>
+    </div>`, { delay: 1300 });
+  await etapaPergunta(0);
+}
+
+async function etapaPergunta(idx, replay = false) {
+  const q = PERGUNTAS[idx];
+  if (!replay) await bot(q.pergunta, { delay: 800 });
+  askChips(q.opcoes.map(o => o.texto), async (texto) => {
+    user(texto);
+    const opt = q.opcoes.find(o => o.texto === texto);
+    state.data.respostas[q.id] = { letra: opt.letra, pontos: opt.pontos };
+    state.step = 3 + idx + 1; persist(); setProgress(state.step);
+    if (idx + 1 < PERGUNTAS.length) await etapaPergunta(idx + 1);
+    else await etapaIntroQualificacao();
   });
 }
 
-async function buscarPerfil(handle) {
-  const h = esc(handle);
-  const loader = showLoader(
-    `🔎 Analisando o <b>@${h}</b> ao vivo`,
-    ['Abrindo o perfil no Instagram', 'Lendo bio, seguidores e números', 'Carregando seus últimos reels', 'Organizando tudo pra você'],
-    7000
-  );
-  const res = await fetchPerfil(handle);
-  await loader.done();
-
-  if (res && res.status === 'ok' && res.profile) {
-    state.data.profile = res.profile;
-    state.data.reels = (res.reels || []).slice(0, 6);
-    state.data.nichoDetectado = res.niche || '';
-    state.data.seguidores = followersToFaixa(res.profile.followersCount || 0);
-    state.data.flowMode = 'apify';
-    persist();
-    renderProfileCard(res.profile);
-    await bot('Achei! Esse é você?', { delay: 700 });
-    askChips(['Sou eu ✅', 'Não é esse perfil'], async (opt) => {
-      user(opt);
-      if (opt.startsWith('Sou')) {
-        state.step = 4; persist(); setProgress(4);
-        salvarLead('parcial');
-        await etapaReel();
-      } else {
-        state.data.profile = null; state.data.reels = null; state.data.flowMode = null; persist();
-        await bot('Sem problema! Me passa o @ certinho então:');
-        await etapaInstagram(true);
-      }
-    });
-  } else {
-    // Apify indisponível / perfil não encontrado → fluxo manual
-    state.data.flowMode = 'manual'; state.step = 4; persist(); setProgress(4);
-    salvarLead('parcial');
-    if (res && res.status === 'not_found') {
-      await bot(`Não consegui abrir o <b>@${h}</b> agora (pode ser privado ou novo) — sem problema, seguimos com o diagnóstico! 💪`);
-    }
-    await etapaSeguidoresQ();
-  }
+async function etapaIntroQualificacao() {
+  await bot('Só mais algumas perguntas rápidas pra eu te ajudar melhor:', { delay: 1000 });
+  await etapaQualificacao(0);
 }
 
-async function etapaReel(replay = false) {
-  const reels = state.data.reels || [];
-  if (!reels.length) {
-    if (!replay) await bot('Não achei reels públicos recentes no perfil — sem problema, seguimos!');
-    state.step = 5; persist(); setProgress(5);
-    await etapaNicho();
-    return;
-  }
-  if (!replay) await bot(`E olha o que eu separei: seus últimos reels. <b>Escolhe UM</b> pra eu analisar a fundo no seu diagnóstico 👇`);
-  askReels(reels, async (reel) => {
-    if (reel) {
-      state.data.reel = reel;
-      user(`🎬 ${reel.views != null ? fmtNum(reel.views) + ' views' : 'Reel escolhido'}${reel.caption ? ' — "' + reel.caption.slice(0, 42) + '…"' : ''}`);
+async function etapaQualificacao(idx, replay = false) {
+  const q = QUALIFICACAO[idx];
+  if (!replay) await bot(q.pergunta, { delay: 700 });
+  askChips(q.opcoes, async (opt) => {
+    user(opt);
+    state.data.qualificacao[q.id] = opt;
+    state.step = 13 + idx + 1; persist(); setProgress(state.step);
+    if (idx + 1 < QUALIFICACAO.length) {
+      await etapaQualificacao(idx + 1);
     } else {
-      user('Prefiro pular a análise de reel');
-    }
-    state.step = 5; persist(); setProgress(5);
-    salvarLead('parcial');
-    await etapaNicho();
-  });
-}
-
-async function etapaSeguidoresQ(replay = false) {
-  if (!replay) await bot('Quantos seguidores o perfil tem hoje?');
-  askChips(SEGUIDORES, async (faixa) => {
-    user(faixa);
-    state.data.seguidores = faixa; state.step = 5; persist(); setProgress(5);
-    salvarLead('parcial');
-    await etapaNicho();
-  });
-}
-
-async function etapaNicho(replay = false) {
-  const det = state.data.nichoDetectado;
-  // nicho extraído do scraping → só pede confirmação (1 toque)
-  if (det && NICHOS.includes(det)) {
-    if (!replay) await bot(`Pela bio do <b>@${esc(state.data.instagram)}</b>, deu pra ver: seu nicho é <b>${esc(det)}</b>. Confere?`);
-    askChips(['Confere ✅', 'É outro nicho'], async (opt) => {
-      user(opt);
-      if (opt.startsWith('Confere')) { await confirmarNicho(det); return; }
-      await bot('Sem problema — seleciona o nicho certo aqui:');
-      askSelect({
-        label: 'Seu nicho', placeholder: 'Selecione seu nicho...',
-        options: NICHOS.filter(n => n !== det),
-        onOk: async (n) => { user(n); await confirmarNicho(n); },
-      });
-    });
-    return;
-  }
-  if (!replay) await bot(`Antes de eu rodar a análise: em qual nicho o <b>@${esc(state.data.instagram)}</b> atua?`);
-  askSelect({
-    label: 'Seu nicho', placeholder: 'Selecione seu nicho...',
-    options: NICHOS,
-    onOk: async (nicho) => { user(nicho); await confirmarNicho(nicho); },
-  });
-}
-async function confirmarNicho(nicho) {
-  state.data.nicho = nicho; state.step = 6; persist(); setProgress(6);
-  salvarLead('parcial');
-  if (state.data.flowMode === 'apify' && state.data.profile) {
-    await preDiagnostico();
-  }
-  await etapaDesafio();
-}
-
-/* transcreve o áudio do reel escolhido (start+poll, até ~75s); falhou → '' */
-async function transcreverReel() {
-  const r = state.data.reel;
-  if (!r || !r.url || !/instagram\.com/i.test(r.url)) return '';
-  const start = await postJSON(CONFIG.API_TRANSCRIBE, { action: 'start', reelUrl: r.url });
-  if (!start || !start.ok) return '';
-  const t0 = Date.now();
-  while (Date.now() - t0 < 75000) {
-    await sleep(3000);
-    const res = await postJSON(CONFIG.API_TRANSCRIBE, { action: 'poll', runId: start.runId, datasetId: start.datasetId });
-    if (!res || res.ok === false) return '';
-    if (res.status === 'done') return res.transcript || '';
-  }
-  return '';
-}
-
-async function preDiagnostico() {
-  const temReel = !!(state.data.reel && state.data.reel.url);
-  const steps = temReel
-    ? ['Transcrevendo o áudio do seu reel', 'Analisando o roteiro com os 7 Gatilhos', 'Medindo o Conteúdo Notável e o CTA', 'Calculando seu Score CORE']
-    : ['Analisando os números do perfil', 'Aplicando os 7 Gatilhos da Atenção', 'Medindo o Conteúdo Notável e o CTA', 'Calculando seu Score CORE'];
-  const loader = showLoader('🧠 Rodando o <b>Método CORE</b> no seu conteúdo', steps, temReel ? 9000 : 3400);
-
-  if (temReel) {
-    const transcript = await transcreverReel();
-    if (transcript) {
-      state.data.reelTranscript = transcript;
+      const score = calcularScore();
+      const tier = classificar(score);
+      const top3 = pilaresPrioritarios();
+      state.data.score = score;
+      state.data.classificacao = tier.nome;
+      state.data.pilaresPrioritarios = top3.map(p => p.nome).join(' | ');
+      state.data.qualificado = score >= 13 && state.data.qualificacao.urgencia === 'Imediatamente';
       persist();
+      salvarLead('completo');
+      dispararLeadQualificado();
+      await etapaFinal();
     }
-  }
-  const [res] = await Promise.all([gerarPreDiagnostico(), sleep(temReel ? 1500 : 5000)]);
-  await loader.done();
-  await bot(blocoContextoMetodo(), { delay: 1000 });
-  const htmlFinal = res.html + blocoGatilho(res.gatilho) + blocoTrancado(res.notas);
-  // persiste já: se o lead der refresh com o botão na tela, o replay mostra o diagnóstico
-  state.data.preDiag = true;
-  state.data.preDiagHtml = htmlFinal;
-  persist();
-  // GATE: o lead confirma que leu os 3 pilares; só então revela o placar
-  await new Promise((resolve) => {
-    askChips(['Entendi, quero ver o resultado 👀'], async () => {
-      await bot(htmlFinal, { delay: 1200 });
-      await sleep(3000);             // diagnóstico é longo — deixa o lead ler
-      resolve();
-    });
-  });
-}
-
-async function etapaDesafio(replay = false) {
-  if (!replay) await bot('Me confirma uma coisa: qual é o <b>maior desafio</b> do seu perfil hoje?');
-  askChips(DESAFIOS, async (desafio) => {
-    user(desafio);
-    state.data.desafio = desafio; state.step = 7; persist(); setProgress(7);
-    salvarLead('parcial');
-    await etapaFaturamento();
-  });
-}
-
-async function etapaFaturamento(replay = false) {
-  if (!replay) await bot('Última pergunta: qual a sua <b>renda mensal</b> atualmente?');
-  askChips(FATURAMENTOS, async (fat) => {
-    user(fat);
-    state.data.faturamento = fat; state.step = 8;
-    state.data.score = calcularScore(state.data);
-    state.data.qualificado = state.data.score >= QUALIFICADO_MIN;
-    persist(); setProgress(8);
-    salvarLead('completo');
-    await etapaFinal();
   });
 }
 
 /* ================================================================
-   PREVIEW DO PRODUTO — mockup nativo do Template dos 30 Reels.
-   Se CONFIG.PRODUTO_IMG estiver preenchido, usa a imagem real.
+   RESULTADO — bloco de pilares prioritários
    ================================================================ */
-function renderProdutoCard() {
+function blocoPilares(top3) {
+  const itens = top3.map((p, i) => `
+    <div class="pilar-item">
+      <span class="pi-num">${i + 1}º</span>
+      <div><b>Preservar: ${esc(p.nome)}</b><i>${esc(p.resumo)}</i></div>
+    </div>`).join('');
+  return `<b>As três capacidades que precisam ser preservadas primeiro:</b>${itens}`;
+}
+
+/* ================================================================
+   CARD DO PAINEL ESTRATÉGICO DA ROTINA (R$47)
+   ================================================================ */
+function linkPainel() {
+  if (CONFIG.PRODUTO_CHECKOUT_URL) return CONFIG.PRODUTO_CHECKOUT_URL;
+  const d = state.data;
+  const msg = encodeURIComponent(
+    `Olá! Acabei de fazer o Scanner do Envelhecimento.\n\n` +
+    `Nome: ${d.nome}\nResultado: ${d.classificacao} (${d.score}/28)\n` +
+    `Maior preocupação: ${(d.qualificacao && d.qualificacao.preocupacao) || ''}\n\n` +
+    `Quero acessar o Painel Estratégico da Rotina (R$47)! 📋`
+  );
+  return `https://wa.me/${CONFIG.WHATSAPP_NUMERO}?text=${msg}`;
+}
+function linkFalarComPatricia() {
+  const d = state.data;
+  const msg = encodeURIComponent(
+    `Olá! Fiz o Scanner do Envelhecimento e meu resultado foi "${d.classificacao}" (${d.score}/28). Gostaria de conversar antes de decidir.`
+  );
+  return `https://wa.me/${CONFIG.WHATSAPP_NUMERO}?text=${msg}`;
+}
+function renderPainelCard() {
   const s = safeData();
-  if (CONFIG.PRODUTO_IMG) {
-    addRow('bot', `<img class="produto-img" src="${esc(CONFIG.PRODUTO_IMG)}" alt="Template dos 30 Reels Virais">`, 'produto-bubble');
-    return;
-  }
   addRow('bot', `
     <div class="pr-body">
       <div class="pr-glow"></div>
-      <span class="pr-badge">🎁 PRESENTE DESBLOQUEADO</span>
-      <div class="pr-kicker">TEMPLATE CORE</div>
-      <div class="pr-title">30 REELS<br>VIRAIS</div>
-      <div class="pr-sub">Roteiros prontos — gancho, estrutura e CTA — validados em perfis de <b>${s.nicho}</b>.</div>
+      <span class="pr-badge">📋 SEU PRÓXIMO PASSO</span>
+      <div class="pr-kicker">PAINEL ESTRATÉGICO</div>
+      <div class="pr-title">DA ROTINA</div>
+      <div class="pr-sub">Transforme o resultado do Scanner em ações práticas pelos <b>7 Pilares da Preservação</b> — com prioridade pro que <b>${s.primeiro}</b> mais precisa agora.</div>
       <div class="pr-stack">
-        <div class="pr-item"><span class="n">#01</span> Gancho da Crença — "Tudo que te ensinaram sobre…"</div>
-        <div class="pr-item"><span class="n">#02</span> História de Transformação em 3 atos</div>
-        <div class="pr-item blur"><span class="n">#03</span> Plot Twist + CTA de salvamento</div>
-        <div class="pr-mais"><span>🔒 +27 roteiros liberados na sessão</span></div>
+        <div class="pr-item"><span class="n">✓</span> Os 7 Pilares da Preservação, explicados de forma simples</div>
+        <div class="pr-item"><span class="n">✓</span> 5 ações inegociáveis + 5 negociáveis em cada pilar</div>
+        <div class="pr-item"><span class="n">✓</span> Checklists e painel semanal de estímulos</div>
       </div>
-      <div class="pr-foot"><s>R$197</s> <b>GRÁTIS</b> <span>na Sessão Estratégica</span></div>
+      <div class="pr-foot"><b>R$47</b> <span>acesso imediato</span></div>
     </div>
+    <a class="pr-cta" href="${linkPainel()}" target="_blank" rel="noopener">🔓 Acessar o Painel por R$47</a>
   `, 'produto-bubble');
 }
 
 /* ================================================================
-   FINAL — fechamento + PRESENTE + agendamento
+   FINAL — resultado + pilares + oferta do Painel + consultoria
    ================================================================ */
 async function etapaFinal() {
   const d = state.data;
   const s = safeData();
   lgpdEl.style.display = 'none';
+  const tier = classificar(d.score);
 
-  if (d.preDiag) {
-    await bot(`Fechamos, <b>${s.primeiro}</b>. Seu maior gargalo — <b>${esc(d.desafio)}</b> — bate exatamente com o que vi no <b>@${s.instagram}</b>. E a boa notícia: é o tipo de coisa que se destrava rápido com o método certo.`, { delay: 1300 });
-  } else {
-    await bot(`Fechou, <b>${s.primeiro}</b>! Cruzando suas respostas com os padrões que a gente mapeou em centenas de perfis... 🔍`, { delay: 1400 });
-    const tpl = DIAGNOSTICOS[d.desafio] || DIAGNOSTICOS['Alcance baixo (views travadas)'];
-    await bot(tpl(s), { delay: 1500 });
-  }
+  await bot(`Fechamos, <b>${s.primeiro}</b>! Analisando as respostas sobre a rotina do seu familiar... 🔍`, { delay: 1400 });
+  await sleep(1800);
+  await bot(`<b>Resultado: ${esc(tier.nome)}</b> — ${d.score}/28 pontos<br><br>${tier.texto}`, { delay: 1400 });
+  await sleep(2400);
 
-  await sleep(2200);                 // ler o fechamento do diagnóstico
-  await bot('E o diagnóstico desbloqueou uma coisa pra você... 👀', { delay: 1400 });
-  await sleep(1200);                 // suspense
-  {
-    const t = showTyping();
-    await sleep(1700);
-    hideTyping(t);
-    addRow('bot', `🎁 <b>PARABÉNS, ${s.primeiro}!</b> Você acaba de ganhar o<br><b class="gift-prod">TEMPLATE DOS 30 REELS VIRAIS</b><br>os roteiros que usamos pra estourar perfis no seu nicho.`, 'gift-announce');
-  }
-  await sleep(2400);                 // deixa o presente ser lido antes do card
-  renderProdutoCard();
-  await sleep(2800);                 // tempo de ver o preview do produto
+  const top3 = pilaresPrioritarios();
+  await bot(blocoPilares(top3), { delay: 1300 });
+  await sleep(2200);
+
+  await bot('Agora você já sabe quais capacidades precisam de atenção. Mas perceber o problema não é suficiente se a família continuar sem saber o que fazer amanhã pela manhã.', { delay: 1400 });
+  await sleep(1600);
+  await bot('O <b>Painel Estratégico da Rotina</b> transforma esse resultado em ações práticas — organizadas pelos 7 Pilares da Preservação, pra você começar exatamente pelas áreas que o seu resultado apontou.', { delay: 1500 });
+  await sleep(1800);
+
+  renderPainelCard();
+  await sleep(2400);
+
   if (d.qualificado) {
-    await bot('⚡ Pelo seu estágio, seu perfil entrou como <b>alto potencial</b> — aproveita a vaga.', { delay: 1300 });
-    await sleep(1400);
+    await bot(`Pelo que você me contou, <b>${s.primeiro}</b>, esse é um momento que pede atenção mais próxima. Além do Painel, quero te oferecer uma <b>conversa gratuita comigo</b> pra montarmos prioridades específicas pra sua família. Toca no melhor horário 👇`, { delay: 1500 });
+    await sleep(1800);
+    await renderAgenda();
+  } else {
+    await bot('Se preferir conversar comigo antes de decidir, é só chamar no WhatsApp 👇', { delay: 1300 });
+    await sleep(600);
+    addRow('bot', `<a class="cta-btn whats" href="${linkFalarComPatricia()}" target="_blank" rel="noopener">💬 Falar com a Patrícia no WhatsApp</a>`);
   }
-  await bot(`Pra resgatar, agenda uma <b>reunião gratuita</b> pra conhecer o método de crescimento no Instagram que já gerou <b>+50 milhões de seguidores</b>, <b>3 bilhões de visualizações</b> e <b>100 mil clientes</b> — você sai com o template na mão. Toca no melhor horário 👇`, { delay: 1600 });
-  await sleep(2000);                 // ler o convite antes do calendário aparecer
-
-  await renderAgenda();
   state.done = true; persist();
 }
 
-/* decide a agenda: embed da instância (vendedor sorteado no backend)
-   ou, sem rota de embed, o calendário local */
+/* decide a agenda: embed da instância ou, sem rota de embed, o calendário local */
 async function renderAgenda() {
   const d = state.data;
+  const q = d.qualificacao || {};
   const rota = await postJSON(CONFIG.API_AGENDA, {
-    action: 'route',
-    renda: d.faturamento || '', nicho: d.nicho || '',
-    bio: (d.profile && d.profile.biography) || '',
+    action: 'route', renda: q.investimento || '', nicho: '', bio: '',
   }, 6000);
-  // Grava a trilha assim que ela é decidida — mesmo que o lead NÃO conclua o
-  // agendamento. Sem isso, o banco (e o dashboard) só conheceria a trilha de
-  // quem fechou booking, sub-contando os médicos/premium que só chegaram aqui.
   if (rota && rota.track) {
     state.data.callTrack = rota.track;
     state.data.vendedor = rota.vendor || '';
     state.data.vendorEventTypeId = rota.vendorEventTypeId || null;
     persist();
-    salvarLead('completo');
-    dispararLeadQualificado();   // Lead aqui: lead qualificado 10k+ (closer/audience), mesmo que não agende
   }
-  // Motor invisível primeiro: horários reais via API, o lead nunca vê o Cal.
-  // Se a API não trouxer horários, renderAgendaInline cai no embed (se houver
-  // link na trilha) e, por último, na agenda local.
   await renderAgendaInline(rota || {});
 }
 
 /* booker da instância embutido no chat — agendamento REAL sem API */
 function renderAgendaEmbed(info) {
-  // base derivada do próprio link do backend (evita hardcodar a instância do Cal no front)
   const base = (() => { try { return new URL(info.embedLink).origin; } catch { return ''; } })();
   const path = String(info.embedLink || '').replace(base, '').replace(/^\/+/, '');
   const row = addRow('bot', `
     <div class="ag-head">
       <span class="ag-ic">📅</span>
-      <div><h4>Escolhe o melhor horário</h4><p>Sessão de diagnóstico gratuita · online</p></div>
+      <div><h4>Escolhe o melhor horário</h4><p>Conversa gratuita com a Patrícia · online</p></div>
     </div>
     <div class="cal-embed-body"><div class="cal-embed-slot"></div></div>
   `, 'agenda-card cal-embed-card');
   const slot = row.querySelector('.cal-embed-slot');
 
-  /* snippet oficial do embed, apontando pra NOSSA instância */
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, base + "/embed/embed.js", "init");
 
   Cal("init", "core", { origin: base });
@@ -1642,7 +1246,7 @@ function renderAgendaEmbed(info) {
     calLink: path,
     config: { theme: "light", name: state.data.nome || '', email: state.data.email || '' },
   });
-  Cal.ns.core("ui", { theme: "light", styles: { branding: { brandColor: "#a155f2" } }, hideEventTypeDetails: false });
+  Cal.ns.core("ui", { theme: "light", styles: { branding: { brandColor: "#b8874a" } }, hideEventTypeDetails: false });
   Cal.ns.core("on", { action: "bookingSuccessful", callback: (e) => onEmbedAgendado(e, row, info) });
   scrollDown();
 }
@@ -1672,7 +1276,7 @@ async function onEmbedAgendado(e, row, info) {
   card.innerHTML = `
     <div class="ag-head">
       <span class="ag-ic">📅</span>
-      <div><h4>Sessão agendada</h4><p>Te esperamos lá!</p></div>
+      <div><h4>Conversa agendada</h4><p>Te espero lá!</p></div>
     </div>
     <div class="ag-done">
       <div class="ag-check">✓</div>
@@ -1684,22 +1288,11 @@ async function onEmbedAgendado(e, row, info) {
   scrollDown();
 
   const s = safeData();
-  await bot(`✅ <b>Agendado, ${s.primeiro}!</b> Salvei sua <a href="${pageUrl}" target="_blank" rel="noopener"><b>página da reunião</b></a> — lá tem o contador e os detalhes. Seu <b>Template dos 30 Reels Virais</b> está garantido. Até lá! 🚀`, { delay: 900 });
-}
-
-function waLink() {
-  const d = state.data;
-  const msg = encodeURIComponent(
-    `Olá! Acabei de fazer o Diagnóstico de Crescimento Orgânico.\n\n` +
-    `Nome: ${d.nome}\nPerfil: @${d.instagram}\nNicho: ${d.nicho}\n` +
-    `Seguidores: ${d.seguidores}\nDesafio: ${d.desafio}\n\n` +
-    `Quero agendar minha Sessão Estratégica e resgatar o TEMPLATE DOS 30 REELS VIRAIS! 🎁`
-  );
-  return `https://wa.me/${CONFIG.WHATSAPP_NUMERO}?text=${msg}`;
+  await bot(`✅ <b>Agendado, ${s.primeiro}!</b> Salvei sua <a href="${pageUrl}" target="_blank" rel="noopener"><b>página da reunião</b></a> — lá tem o contador e os detalhes. Até lá! 🚀`, { delay: 900 });
 }
 
 /* ================================================================
-   AGENDA INLINE — calendário nativo no chat (estilo Viver de IA).
+   AGENDA INLINE — calendário nativo no chat.
    Disponibilidade vem das regras em CONFIG.AGENDA; o horário escolhido
    vai pro Supabase (status 'agendado' + agendamento_em).
    ================================================================ */
@@ -1723,7 +1316,7 @@ function slotsDoDia(dt) {
 
 function diasDisponiveis() {
   const A = CONFIG.AGENDA;
-  const dias = new Map(); // key → Date
+  const dias = new Map();
   const hoje = new Date();
   for (let i = 0; i <= A.diasAdiante; i++) {
     const dt = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + i);
@@ -1735,19 +1328,16 @@ function diasDisponiveis() {
 }
 
 async function renderAgendaInline(rota = {}) {
-  /* tenta o motor Cal (invisível pro lead); sem horários → embed (fallback) → regras locais */
   let modo = 'local';
   let slotsCal = null, isoCal = null;
   const dStr = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
   {
     const hoje = new Date();
     const fimJanela = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + CONFIG.AGENDA.diasAdiante);
+    const q = state.data.qualificacao || {};
     const r = await postJSON(CONFIG.API_AGENDA, {
       action: 'slots', start: dStr(hoje), end: dStr(fimJanela),
-      // perfil pro roteamento de trilha (premium/padrão) no backend
-      renda: state.data.faturamento || '', nicho: state.data.nicho || '',
-      bio: (state.data.profile && state.data.profile.biography) || '',
-      // mantém o vendedor já sorteado no route (consistência slot ↔ booking)
+      renda: q.investimento || '', nicho: '', bio: '',
       vendorEventTypeId: state.data.vendorEventTypeId || rota.vendorEventTypeId || null,
     }, 8000);
     if (r && r.ok && r.slots && Object.keys(r.slots).length) {
@@ -1759,8 +1349,6 @@ async function renderAgendaInline(rota = {}) {
   }
   state.data.agendaModo = modo; persist();
 
-  // API não trouxe horários (sem chave, sem event type da trilha, ou erro):
-  // se a trilha tem booker, usa o embed; senão segue pra agenda local.
   if (modo !== 'cal' && rota && rota.embedLink) { renderAgendaEmbed(rota); return; }
 
   let disponiveis;
@@ -1787,7 +1375,7 @@ async function renderAgendaInline(rota = {}) {
   const row = addRow('bot', `
     <div class="ag-head">
       <span class="ag-ic">📅</span>
-      <div><h4>Agenda hoje</h4><p>Para sua reunião gratuita</p></div>
+      <div><h4>Agenda hoje</h4><p>Para sua conversa gratuita</p></div>
     </div>
     <div class="ag-body">
       <div class="ag-today"><span>📍 Hoje é ${esc(semanaHoje)}, ${horaAgora}</span></div>
@@ -1868,7 +1456,6 @@ async function renderAgendaInline(rota = {}) {
     scrollDown();
   }
 
-  // pré-seleciona o primeiro dia disponível (igual ao mockup)
   if (datas.length) { diaSel = datas[0]; mesAtual = new Date(diaSel.getFullYear(), diaSel.getMonth(), 1); }
   renderMes();
   renderSlots();
@@ -1878,7 +1465,6 @@ async function confirmarAgendamento(card, dia, hora, iso) {
   if (state.data.agendado) return;
   const d = state.data;
 
-  // trava a UI do card enquanto confirma
   card.style.pointerEvents = 'none';
   const foot = card.querySelector('.ag-foot');
   if (foot) foot.textContent = 'Confirmando seu horário…';
@@ -1887,13 +1473,13 @@ async function confirmarAgendamento(card, dia, hora, iso) {
   let bookingUid = '', videoUrl = '';
 
   if (d.agendaModo === 'cal') {
+    const q = d.qualificacao || {};
     const r = await postJSON(CONFIG.API_AGENDA, {
       action: 'book', start: quandoISO,
       nome: d.nome, email: d.email, whatsapp: d.whatsapp,
-      renda: d.faturamento || '', nicho: d.nicho || '',
-      bio: (d.profile && d.profile.biography) || '',
+      renda: q.investimento || '', nicho: '', bio: '',
       vendorEventTypeId: d.vendorEventTypeId || null,
-      metadata: { instagram: '@' + (d.instagram || ''), nicho: d.nicho || '', lead_ref: state.leadRef, origem: 'diagnostico-instagram' },
+      metadata: { lead_ref: state.leadRef, origem: 'scanner-envelhecimento' },
     }, 14000);
     if (r && r.ok) {
       bookingUid = r.uid || '';
@@ -1907,8 +1493,6 @@ async function confirmarAgendamento(card, dia, hora, iso) {
       await renderAgendaInline();
       return;
     } else {
-      // qualquer outra falha do Cal (erro/timeout/sem chave): NÃO confirmar uma reunião
-      // que não existe. Pede pra escolher de novo em vez de mostrar "confirmado" no escuro.
       card.closest('.row')?.remove();
       await bot('Ops, não consegui confirmar esse horário agora 😅 Pode escolher de novo aqui? Aí eu já registro certinho:', { delay: 800 });
       await renderAgendaInline();
@@ -1936,7 +1520,7 @@ async function confirmarAgendamento(card, dia, hora, iso) {
   card.innerHTML = `
     <div class="ag-head">
       <span class="ag-ic">📅</span>
-      <div><h4>Sessão agendada</h4><p>Te esperamos lá!</p></div>
+      <div><h4>Conversa agendada</h4><p>Te espero lá!</p></div>
     </div>
     <div class="ag-done">
       <div class="ag-check">✓</div>
@@ -1948,84 +1532,61 @@ async function confirmarAgendamento(card, dia, hora, iso) {
   scrollDown();
 
   const s = safeData();
-  await bot(`✅ <b>Agendado, ${s.primeiro}!</b> ${esc(diaTxt)} às <b>${esc(horaTxt)}</b>. Salvei sua <a href="${pageUrl}" target="_blank" rel="noopener"><b>página da reunião</b></a> — lá tem o contador e o botão de entrar. Seu <b>Template dos 30 Reels Virais</b> está garantido. Até lá! 🚀`, { delay: 900 });
+  await bot(`✅ <b>Agendado, ${s.primeiro}!</b> ${esc(diaTxt)} às <b>${esc(horaTxt)}</b>. Salvei sua <a href="${pageUrl}" target="_blank" rel="noopener"><b>página da reunião</b></a> — lá tem o contador e o botão de entrar. Até lá! 🚀`, { delay: 900 });
 }
 
 /* ================================================================
    REPLAY (refresh no meio do fluxo) + BOOT
+   Simplificado: no retorno, mostra só as respostas já dadas (sem
+   repetir cada pergunta) e retoma a etapa atual normalmente.
    ================================================================ */
 function replayUserLabel(st) {
   const d = state.data;
-  switch (st) {
-    case 0: return d.nome;
-    case 1: return (d.paisDDI && d.paisDDI !== '55')
-      ? '+' + d.paisDDI + ' ' + (d.whatsapp || '').slice(d.paisDDI.length)
-      : maskFone((d.whatsapp || '').slice(2));
-    case 2: return d.email;
-    case 3: return '@' + d.instagram;
-    case 4:
-      if (d.flowMode !== 'apify') return d.seguidores;
-      if (d.reel) return `🎬 ${d.reel.views != null ? fmtNum(d.reel.views) + ' views' : 'Reel escolhido'}`;
-      return 'Prefiro pular a análise de reel';
-    case 5: return d.nicho;
-    case 6: return d.desafio;
-    default: return '';
+  if (st === 0) return d.nome;
+  if (st === 1) return (d.paisDDI && d.paisDDI !== '55')
+    ? '+' + d.paisDDI + ' ' + (d.whatsapp || '').slice(d.paisDDI.length)
+    : maskFone((d.whatsapp || '').slice(2));
+  if (st === 2) return d.email;
+  if (st >= 3 && st < 3 + PERGUNTAS.length) {
+    const q = PERGUNTAS[st - 3];
+    const r = d.respostas[q.id];
+    if (!r) return '';
+    const opt = q.opcoes.find(o => o.letra === r.letra);
+    return opt ? opt.texto : '';
   }
-}
-function replayBotAfter(st) {
-  const d = state.data;
-  switch (st) {
-    case 0: return [`Prazer, <b>${esc(d.nome.split(' ')[0])}</b>! 👊 Pra eu te enviar o resultado completo do diagnóstico, qual seu WhatsApp?`];
-    case 1: return [MSG_UF[d.uf] || MSG_UF_FALLBACK, 'E qual seu melhor e-mail?'];
-    case 2: return ['Agora a parte boa: qual o <b>@</b> do seu perfil no Instagram? Vou dar uma olhada nele em tempo real 👀'];
-    case 3: {
-      const msgs = [];
-      if (d.flowMode === 'apify' && d.profile) msgs.push('__PCARD__', 'Achei! Esse é você?');
-      return msgs;
-    }
-    case 4: return [`Pela bio do <b>@${esc(d.instagram)}</b>, deu pra ver: seu nicho é <b>${esc(d.nichoDetectado || '')}</b>. Confere?`];
-    case 5: {
-      const msgs = [];
-      if (d.preDiagHtml) msgs.push(blocoContextoMetodo(), d.preDiagHtml);
-      msgs.push('Me confirma uma coisa: qual é o <b>maior desafio</b> do seu perfil hoje?');
-      return msgs;
-    }
-    case 6: return ['Última pergunta: qual a sua <b>renda mensal</b> atualmente?'];
-    default: return [];
+  const qi = st - (3 + PERGUNTAS.length);
+  if (qi >= 0 && qi < QUALIFICACAO.length) {
+    const q = QUALIFICACAO[qi];
+    return (d.qualificacao || {})[q.id] || '';
   }
+  return '';
 }
-const ETAPAS = [etapaNome, etapaWhats, etapaEmail, etapaInstagram, null, etapaNicho, etapaDesafio, etapaFaturamento];
+
+function resumeFrom(step) {
+  if (step === 1) return etapaWhats(true);
+  if (step === 2) return etapaEmail(true);
+  if (step === 3) return etapaIntroQuiz();
+  if (step >= 4 && step <= 3 + PERGUNTAS.length) return etapaPergunta(step - 4, true);
+  const qi = step - (3 + PERGUNTAS.length);
+  if (qi >= 0 && qi < QUALIFICACAO.length) return etapaQualificacao(qi, true);
+  return etapaNome();
+}
 
 async function boot() {
   sendBtn.onclick = () => onSubmit && onSubmit();
   input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); onSubmit && onSubmit(); } });
 
-  if (state.step > 0 && state.step < 8 && state.data.nome) {
-    addRow('bot', 'Perfis que aplicam o conteúdo certo estão multiplicando o alcance em até <b>10x</b> e transformando seguidores em <b>vendas</b> — sem investir 1 real em anúncio.');
-    addRow('bot', 'Bora começar: qual seu nome?');
+  if (state.done) {
+    await bot('Bem-vindo de volta! Aqui está seu resultado outra vez:', { delay: 600 });
+    await etapaFinal();
+  } else if (state.step > 0 && state.step < TOTAL_STEPS && state.data.nome) {
     for (let st = 0; st < state.step; st++) {
-      user(replayUserLabel(st));
-      if (st === 3 && state.data.flowMode === 'apify' && state.data.profile) {
-        replayBotAfter(3).forEach(m => m === '__PCARD__' ? renderProfileCard(state.data.profile) : addRow('bot', m));
-        user('Sou eu ✅');
-        if (state.step > 4) continue;
-      } else if (st === 4 && !(state.data.nichoDetectado && NICHOS.includes(state.data.nichoDetectado))) {
-        addRow('bot', `Antes de eu rodar a análise: em qual nicho o <b>@${esc(state.data.instagram)}</b> atua?`);
-        continue;
-      } else {
-        replayBotAfter(st).forEach(m => addRow('bot', m));
-        continue;
-      }
-      addRow('bot', 'E olha o que eu separei: seus últimos reels. <b>Escolhe UM</b> pra eu analisar a fundo no seu diagnóstico 👇');
+      const label = replayUserLabel(st);
+      if (label) user(label);
     }
     setProgress(state.step);
     await bot('Continuando de onde você parou 😉', { delay: 600 });
-    if (state.step === 4) {
-      if (state.data.flowMode === 'apify') await etapaReel(true);
-      else await etapaSeguidoresQ(true);
-    } else {
-      await ETAPAS[state.step](true);
-    }
+    await resumeFrom(state.step);
   } else {
     await sleep(500);
     await etapaNome();

@@ -1,6 +1,7 @@
 /**
- * Captura progressiva na tabela PRÓPRIA do funil: diag_instagram_leads
- * (criada pelo setup.sql — nenhuma tabela existente do banco é tocada).
+ * Captura progressiva na tabela PRÓPRIA do funil (Scanner do Envelhecimento):
+ * diag_instagram_leads (nome interno legado — só um detalhe de implementação;
+ * criada/estendida pelo setup.sql, nenhuma tabela existente do banco é tocada).
  *
  * UPSERT atômico por lead_ref (on_conflict): cada etapa do funil reenvia
  * o estado completo e a linha evolui.
@@ -35,10 +36,9 @@ export default async (req) => {
     const digits = String(b.whatsapp || '').replace(/\D/g, '');
     // o front já manda ddi+número (E.164 sem '+'); só prefixa '+' — não força 55 (quebraria estrangeiro)
     const e164 = digits ? `+${digits}` : '';
-    const p = (b.profile && typeof b.profile === 'object') ? b.profile : null;
-    const r = (b.reel && typeof b.reel === 'object') ? b.reel : null;
     const txt = (v, max = 300) => String(v ?? '').slice(0, max);
     const num = (v) => (typeof v === 'number' && isFinite(v)) ? v : null;
+    const respostas = (b.respostas && typeof b.respostas === 'object') ? b.respostas : null;
 
     const row = {
       lead_ref: txt(b.lead_ref, 60),
@@ -46,14 +46,15 @@ export default async (req) => {
       nome: txt(b.nome, 120),
       email: txt(b.email, 200).toLowerCase(),
       whatsapp: e164,
-      uf: txt(b.uf, 4),
-      instagram: txt(b.instagram, 40).replace(/^@/, '').toLowerCase(),
-      nicho: txt(b.nicho, 60),
-      nicho_detectado: txt(b.nicho_detectado, 60),
-      seguidores: txt(b.seguidores, 30),
-      dificuldade: txt(b.dificuldade, 60),
-      renda: txt(b.faturamento, 30),
+      respostas,
       lead_score: num(b.score),
+      classificacao: txt(b.classificacao, 60),
+      pilares_prioritarios: txt(b.pilares_prioritarios, 200),
+      parentesco: txt(b.parentesco, 60),
+      investimento_mensal: txt(b.investimento_mensal, 40),
+      quem_cuida: txt(b.quem_cuida, 80),
+      maior_preocupacao: txt(b.maior_preocupacao, 80),
+      urgencia: txt(b.urgencia, 40),
       qualificado: typeof b.qualificado === 'boolean' ? b.qualificado : null,
       call_track: txt(b.call_track, 12),
       vendedor: txt(b.vendedor, 60),
@@ -61,26 +62,6 @@ export default async (req) => {
       agendamento_em: b.agendamento_em || null,
       booking_uid: txt(b.booking_uid, 80),
       video_url: txt(b.video_url, 300),
-      ...(p ? {
-        ig_full_name: txt(p.fullName, 120),
-        ig_bio: txt(p.biography, 400),
-        ig_pic_url: txt(p.profilePicUrl, 500),
-        ig_followers: num(p.followersCount),
-        ig_following: num(p.followsCount),
-        ig_posts: num(p.postsCount),
-        ig_business: !!p.isBusinessAccount,
-        ig_categoria: txt(p.businessCategoryName, 80),
-        ig_link_bio: txt(p.externalUrl, 300),
-        ig_verificado: !!p.verified,
-      } : {}),
-      ...(r ? {
-        reel_url: txt(r.url, 300),
-        reel_caption: txt(r.caption, 220),
-        reel_views: num(r.views),
-        reel_likes: num(r.likes),
-        reel_comments: num(r.comments),
-      } : {}),
-      ...(b.reel_transcript ? { reel_transcript: txt(b.reel_transcript, 600) } : {}),
       utm_source: txt(b.utm_source, 200),
       utm_medium: txt(b.utm_medium, 200),
       utm_campaign: txt(b.utm_campaign, 200),

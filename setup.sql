@@ -90,3 +90,21 @@ create trigger diag_touch before update on public.diag_instagram_leads
 create index if not exists diag_leads_created_idx on public.diag_instagram_leads (created_at desc);
 create index if not exists diag_leads_status_idx  on public.diag_instagram_leads (status);
 create index if not exists diag_leads_agendado_idx on public.diag_instagram_leads (agendado) where agendado;
+
+-- ================================================================
+-- SCANNER DO ENVELHECIMENTO — colunas do novo funil (Programa Cuidado
+-- Seguro), adicionadas na MESMA tabela (nome interno ficou como estava;
+-- é só um detalhe de implementação, invisível pro usuário final).
+-- SEGURO: só ADICIONA colunas novas, nada é removido ou alterado.
+-- ================================================================
+alter table public.diag_instagram_leads
+  add column if not exists respostas             jsonb,                  -- {q1:{letra,pontos}, ...} das 10 perguntas ponderadas
+  add column if not exists classificacao          text not null default '', -- faixa do resultado (0-5/6-12/13-19/20-28)
+  add column if not exists pilares_prioritarios   text not null default '', -- os 3 pilares mais afetados, separados por ' | '
+  add column if not exists parentesco             text not null default '',
+  add column if not exists investimento_mensal    text not null default '',
+  add column if not exists quem_cuida             text not null default '',
+  add column if not exists maior_preocupacao      text not null default '',
+  add column if not exists urgencia               text not null default '';
+
+create index if not exists diag_leads_classificacao_idx on public.diag_instagram_leads (classificacao);

@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
-  <title>Sua Sessão Estratégica | Core Audience</title>
+  <title>Sua Conversa | Programa Cuidado Seguro</title>
   <meta name="robots" content="noindex">
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-page: #fafafc; --bg-header: #0d0a1a; --bg-card: #ffffff; --bg-soft: #f2f1f7;
-      --text: #18141f; --text-dim: #4a4458; --text-muted: #9b95a8;
-      --border: rgba(24, 20, 31, 0.08);
-      --accent: #a155f2; --accent-dark: #7d3bd6; --accent-soft: rgba(161, 85, 242, 0.09);
-      --green: #25d366; --green-dark: #1faa52; --gold: #f5a623;
-      --gradient: linear-gradient(135deg, #a155f2 0%, #8b3fe0 100%);
+      --bg-page: #fafaf8; --bg-header: #1c3a2c; --bg-card: #ffffff; --bg-soft: #f2f0ea;
+      --text: #201d17; --text-dim: #4d493f; --text-muted: #9a9384;
+      --border: rgba(32, 29, 23, 0.08);
+      --accent: #b8874a; --accent-dark: #8f6530; --accent-soft: rgba(184, 135, 74, 0.10);
+      --green: #25d366; --green-dark: #1faa52; --gold: #b8874a;
+      --gradient: linear-gradient(135deg, #b8874a 0%, #8f6530 100%);
       --shadow-soft: 0 1px 2px rgba(24,20,31,.04), 0 8px 24px rgba(24,20,31,.06);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,8 +32,8 @@
       max-width: 720px; margin: 0 auto; padding: 12px 18px;
       display: flex; align-items: center; gap: 11px;
     }
-    .brand-badge { background: var(--bg-header); border-radius: 11px; padding: 8px 12px; display: flex; }
-    .brand-badge img { height: 17px; width: auto; max-width: 92px; object-fit: contain; }
+    .brand-badge { display: flex; }
+    .brand-badge img { height: 34px; width: auto; max-width: 130px; object-fit: contain; }
     .brand-sub { font-size: 12.5px; font-weight: 600; color: var(--text-dim); }
 
     main { flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: 34px 18px 50px; }
@@ -47,7 +47,7 @@
     .card-head { background: var(--bg-header); color: #fff; padding: 22px 26px; display: flex; gap: 14px; align-items: center; }
     .avatar {
       width: 50px; height: 50px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
-      border: 2px solid rgba(184,118,255,.6); background: #1d1830;
+      border: 2px solid rgba(212,165,102,.6); background: #142a20;
     }
     .avatar img { width: 100%; height: 100%; object-fit: cover; }
     .card-head h1 { font-size: 18px; }
@@ -82,7 +82,7 @@
       text-decoration: none; transition: transform .15s, opacity .2s;
     }
     .btn:active { transform: scale(.97); }
-    .btn.entrar { background: var(--gradient); box-shadow: 0 6px 22px rgba(161,85,242,.35); }
+    .btn.entrar { background: var(--gradient); box-shadow: 0 6px 22px rgba(184,135,74,.35); }
     .btn.entrar.locked { opacity: .45; pointer-events: none; }
     .btn.gcal { background: var(--bg-soft); color: var(--text-dim); border: 1px solid var(--border); font-weight: 600; }
     .hint { font-size: 12px; color: var(--text-muted); margin-top: 9px; }
@@ -99,18 +99,18 @@
 <body>
   <header>
     <div class="topbar">
-      <span class="brand-badge"><img src="logo.png" alt="Core Audience"></span>
-      <span class="brand-sub">Sessão Estratégica</span>
+      <span class="brand-badge"><img src="logo.jpg" alt="Programa Cuidado Seguro"></span>
+      <span class="brand-sub">Conversa com a Patrícia</span>
     </div>
   </header>
 
   <main>
     <div class="card">
       <div class="card-head">
-        <div class="avatar"><img src="fabio.jpg" alt="" onerror="this.onerror=null;this.src='logo.png';this.style.objectFit='contain';this.style.padding='6px'"></div>
+        <div class="avatar"><img src="patricia.jpg" alt="" onerror="this.onerror=null;this.src='logo.jpg';this.style.objectFit='contain';this.style.padding='6px'"></div>
         <div>
           <h1>Sua reunião está confirmada 🎉</h1>
-          <p>Sessão Estratégica de Crescimento Orgânico · 30 min · online</p>
+          <p>Conversa sobre o cuidado do seu familiar · 30 min · online</p>
         </div>
       </div>
       <div class="card-body">
@@ -131,11 +131,11 @@
         <p class="hint" id="hintEntrar" hidden>O botão libera 15 minutos antes do horário.</p>
         <a class="btn gcal" id="btnGcal" target="_blank" rel="noopener" hidden>📅&nbsp; Adicionar ao Google Agenda</a>
 
-        <div class="gift">🎁 <b>Não esquece:</b> seu <b>Template dos 30 Reels Virais</b> é entregue nessa sessão — junto com o plano de crescimento do seu perfil.</div>
+        <div class="gift">📋 <b>Enquanto isso:</b> se ainda não acessou, dá uma olhada no <b>Painel Estratégico da Rotina</b> — já ajuda a organizar o dia a dia antes da nossa conversa.</div>
       </div>
     </div>
   </main>
-  <footer>Core Audience · chegue 2 minutinhos antes 😉</footer>
+  <footer>Programa Cuidado Seguro · chegue 2 minutinhos antes 😉</footer>
 
 <script>
 /* SEGURANÇA: todo dado dinâmico (nome via query/API, datas, links) entra no
@@ -195,9 +195,9 @@
   // Google Agenda
   const gdate = (d) => d.toISOString().replace(/[-:]|\.\d{3}/g, '');
   $('btnGcal').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
-    '&text=' + encodeURIComponent('Sessão Estratégica — Core Audience') +
+    '&text=' + encodeURIComponent('Conversa — Programa Cuidado Seguro') +
     '&dates=' + gdate(start) + '/' + gdate(fim) +
-    '&details=' + encodeURIComponent('Sessão Estratégica de Crescimento Orgânico no Instagram.' + (videoUrl ? ' Entrar: ' + videoUrl : ''));
+    '&details=' + encodeURIComponent('Conversa sobre o cuidado do seu familiar, com Patrícia Sena.' + (videoUrl ? ' Entrar: ' + videoUrl : ''));
   $('btnGcal').hidden = false;
 
   // botão de entrar (libera 15 min antes)
