@@ -647,6 +647,10 @@ const QUALIFICACAO = [
 
 const TOTAL_STEPS = 3 + PERGUNTAS.length + QUALIFICACAO.length; // nome+whats+email + 10 + 5 = 18
 
+// faixas de investimento mensal que já indicam família estruturada pra
+// investir num cuidado de verdade — vai direto pro agendamento da consultoria
+const INVESTIMENTOS_ALTOS = ['De R$ 7.001 a R$ 15.000', 'Acima de R$ 15.000'];
+
 /* ================================================================
    CLASSIFICAÇÃO DO RESULTADO (score 0–28)
    ================================================================ */
@@ -979,7 +983,7 @@ function dispararEventoMeta(eventName, flagKey, contentName) {
     event_source_url: location.href, currency: 'BRL',
   }, 6000);
 }
-function dispararLeadQualificado() { if (state.data.qualificado) dispararEventoMeta('Lead', 'leadPixelEnviado', 'Scanner do Envelhecimento — alto risco'); }
+function dispararLeadQualificado() { if (state.data.qualificado) dispararEventoMeta('Lead', 'leadPixelEnviado', 'Scanner do Envelhecimento — lead qualificado'); }
 function dispararAgendamento() { dispararEventoMeta('Schedule', 'schedulePixelEnviado', 'Consultoria — Cuidado Seguro'); }
 
 async function postJSON(url, payload, timeoutMs = 9000) {
@@ -1109,7 +1113,11 @@ async function etapaQualificacao(idx, replay = false) {
       state.data.score = score;
       state.data.classificacao = tier.nome;
       state.data.pilaresPrioritarios = top3.map(p => p.nome).join(' | ');
-      state.data.qualificado = score >= 13 && state.data.qualificacao.urgencia === 'Imediatamente';
+      const altoRiscoUrgente = score >= 13 && state.data.qualificacao.urgencia === 'Imediatamente';
+      // família já investe bem no cuidado (2 faixas mais altas) → vai direto pro
+      // agendamento da consultoria, sem passar pela oferta do Painel R$47
+      state.data.investeAlto = INVESTIMENTOS_ALTOS.includes(state.data.qualificacao.investimento);
+      state.data.qualificado = altoRiscoUrgente || state.data.investeAlto;
       persist();
       salvarLead('completo');
       dispararLeadQualificado();
@@ -1191,6 +1199,16 @@ async function etapaFinal() {
 
   await bot('Agora você já sabe quais capacidades precisam de atenção. Mas perceber o problema não é suficiente se a família continuar sem saber o que fazer amanhã pela manhã.', { delay: 1400 });
   await sleep(1600);
+
+  if (d.investeAlto) {
+    // família já investe bem no cuidado → pula o Painel, vai direto pro agendamento
+    await bot(`Pelo que você me contou, <b>${s.primeiro}</b>, sua família já está estruturada pra investir num cuidado de verdade. Prefiro te conhecer numa conversa — vou entender a fundo a rotina do seu familiar e já trago prioridades específicas, sem custo. Toca no melhor horário 👇`, { delay: 1600 });
+    await sleep(1800);
+    await renderAgenda();
+    state.done = true; persist();
+    return;
+  }
+
   await bot('O <b>Painel Estratégico da Rotina</b> transforma esse resultado em ações práticas — organizadas pelos 7 Pilares da Preservação, pra você começar exatamente pelas áreas que o seu resultado apontou.', { delay: 1500 });
   await sleep(1800);
 
