@@ -4,9 +4,13 @@
 .netlify/
 .claude/
 
-# conteúdo proprietário: prompt do Método CORE + instância/closers do Cal
-# (o Netlify empacota via import; o repo público NÃO tem)
-netlify/_private.mjs
+# conteúdo proprietário: prompt do Método CORE + instância/closers do Cal.
+# HOJE esse arquivo só tem dados de exemplo (placeholder) e está commitado
+# de propósito, pra os builds via Git funcionarem e os cron jobs (agenda,
+# keepalive-supabase) serem registrados de verdade pela Netlify. Quando
+# tiver o conteúdo REAL (instância/closers), volte a ignorá-lo aqui e
+# avise o Claude pra tirar do repo antes de commitar qualquer coisa nele.
+# netlify/_private.mjs
 
 # dependências e arquivos de sistema
 node_modules/
