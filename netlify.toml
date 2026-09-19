@@ -19,6 +19,11 @@
 [functions."closer-agendou"]
   schedule = "*/15 * * * *"
 
+# keepalive-supabase: ping leve no banco a cada 3 dias pra evitar a pausa
+# automática do projeto Supabase gratuito (pausa após ~7 dias sem atividade).
+[functions."keepalive-supabase"]
+  schedule = "0 8 */3 * *"
+
 # ----------------------------------------------------------------------------
 # SEGURANÇA: bloqueia o acesso público ao código-fonte das functions e aos
 # arquivos de projeto/config (a raiz é publicada por publish="."). As rotas de
