@@ -29,7 +29,8 @@ export default async () => {
   }
 };
 
+// funções agendadas (schedule) não podem ter "path" custom — a Netlify
+// dispara sozinha, não é uma rota HTTP pública
 export const config = {
-  path: '/api/keepalive-supabase',
   schedule: '0 8 */3 * *', // a cada 3 dias às 08:00 UTC — bem dentro da janela de 7 dias do Supabase
 };
