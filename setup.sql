@@ -108,3 +108,18 @@ alter table public.diag_instagram_leads
   add column if not exists urgencia               text not null default '';
 
 create index if not exists diag_leads_classificacao_idx on public.diag_instagram_leads (classificacao);
+
+-- ================================================================
+-- CORREÇÃO: colunas de UTM/atribuição que o save-lead.mjs sempre tentou
+-- gravar mas nunca existiram na tabela original (bug de origem do
+-- template — todo salvamento de lead falhava em silêncio até isso ser
+-- corrigido em 2026-09-19, com PGRST204 "column not found").
+-- ================================================================
+alter table public.diag_instagram_leads
+  add column if not exists utm_source   text not null default '',
+  add column if not exists utm_medium   text not null default '',
+  add column if not exists utm_campaign text not null default '',
+  add column if not exists utm_content  text not null default '',
+  add column if not exists utm_term     text not null default '',
+  add column if not exists fbclid       text not null default '',
+  add column if not exists referrer     text not null default '';
