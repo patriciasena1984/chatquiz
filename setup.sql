@@ -123,3 +123,14 @@ alter table public.diag_instagram_leads
   add column if not exists utm_term     text not null default '',
   add column if not exists fbclid       text not null default '',
   add column if not exists referrer     text not null default '';
+
+-- ================================================================
+-- RASTREIO DE CLIQUE NOS CTAs FINAIS (Painel R$47 / WhatsApp) — o
+-- checkout do Painel é externo (onprofit.com.br) e não avisa de volta
+-- se a venda aconteceu; isso pelo menos mostra intenção de compra.
+-- ================================================================
+alter table public.diag_instagram_leads
+  add column if not exists painel_click    boolean not null default false,
+  add column if not exists painel_click_em timestamptz,
+  add column if not exists whats_click     boolean not null default false,
+  add column if not exists whats_click_em  timestamptz;

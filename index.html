@@ -947,6 +947,10 @@ function salvarLead(status) {
       agendamento_em: d.agendamentoEm || null,
       booking_uid: d.bookingUid || '',
       video_url: d.videoUrl || '',
+      painel_click: d.painelClick === true,
+      painel_click_em: d.painelClickEm || null,
+      whats_click: d.whatsClick === true,
+      whats_click_em: d.whatsClickEm || null,
       call_track: d.callTrack || '',
       vendedor: d.vendedor || '',
       utm_source: (d.utm && d.utm.source) || '',
@@ -1143,6 +1147,25 @@ function blocoPilares(top3) {
 /* ================================================================
    CARD DO PAINEL ESTRATÉGICO DA ROTINA (R$47)
    ================================================================ */
+/* Rastreio de clique nos CTAs finais — não sabemos se a pessoa compra
+   (checkout é externo, sem webhook de volta), mas pelo menos sabemos
+   se ela demonstrou intenção clicando. 1x por lead, dispara Pixel
+   (InitiateCheckout) e persiste no Supabase. */
+function dispararCliquePainel() {
+  if (state.data.painelClick) return;
+  state.data.painelClick = true;
+  state.data.painelClickEm = new Date().toISOString();
+  persist();
+  try { if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'Painel Estratégico da Rotina', value: 47, currency: 'BRL' }); } catch (e) {}
+  salvarLead(state.data.agendado ? 'agendado' : 'completo');
+}
+function dispararCliqueWhats() {
+  if (state.data.whatsClick) return;
+  state.data.whatsClick = true;
+  state.data.whatsClickEm = new Date().toISOString();
+  persist();
+  salvarLead(state.data.agendado ? 'agendado' : 'completo');
+}
 function linkPainel() {
   if (CONFIG.PRODUTO_CHECKOUT_URL) return CONFIG.PRODUTO_CHECKOUT_URL;
   const d = state.data;
@@ -1177,7 +1200,7 @@ function renderPainelCard() {
       </div>
       <div class="pr-foot"><b>R$47</b> <span>acesso imediato</span></div>
     </div>
-    <a class="pr-cta" href="${linkPainel()}" target="_blank" rel="noopener">🔓 Acessar o Painel por R$47</a>
+    <a class="pr-cta" href="${linkPainel()}" target="_blank" rel="noopener" onclick="dispararCliquePainel()">🔓 Acessar o Painel por R$47</a>
   `, 'produto-bubble');
 }
 
@@ -1224,7 +1247,7 @@ async function etapaFinal() {
   } else {
     await bot('Se preferir conversar comigo antes de decidir, é só chamar no WhatsApp 👇', { delay: 1300 });
     await sleep(600);
-    addRow('bot', `<a class="cta-btn whats" href="${linkFalarComPatricia()}" target="_blank" rel="noopener">💬 Falar com a Patrícia no WhatsApp</a>`);
+    addRow('bot', `<a class="cta-btn whats" href="${linkFalarComPatricia()}" target="_blank" rel="noopener" onclick="dispararCliqueWhats()">💬 Falar com a Patrícia no WhatsApp</a>`);
   }
   state.done = true; persist();
 }
