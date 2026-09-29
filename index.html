@@ -1087,6 +1087,7 @@ async function etapaPergunta(idx, replay = false) {
     const opt = q.opcoes.find(o => o.texto === texto);
     state.data.respostas[q.id] = { letra: opt.letra, pontos: opt.pontos };
     state.step = 3 + idx + 1; persist(); setProgress(state.step);
+    salvarLead('contato'); // checkpoint incremental — se o lead abandonar aqui, sabemos exatamente em qual pergunta parou
     if (idx + 1 < PERGUNTAS.length) await etapaPergunta(idx + 1);
     else await etapaIntroQualificacao();
   });
@@ -1105,6 +1106,7 @@ async function etapaQualificacao(idx, replay = false) {
     state.data.qualificacao[q.id] = opt;
     state.step = 13 + idx + 1; persist(); setProgress(state.step);
     if (idx + 1 < QUALIFICACAO.length) {
+      salvarLead('contato'); // checkpoint incremental — mesma lógica das 10 perguntas
       await etapaQualificacao(idx + 1);
     } else {
       const score = calcularScore();
