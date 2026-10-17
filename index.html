@@ -516,6 +516,20 @@ const PILARES = {
   gestao:     { nome: 'Gestão estratégica do cuidado',  resumo: 'Organização familiar, prevenção e capacidade de resposta.' },
 };
 
+/* Dor concreta por pilar — usada na oferta do Painel pra falar da dor
+   REAL do pilar nº1 de cada lead, em vez de genérico "7 pilares".
+   Baseado na análise de respostas: Movimento (46%) e Rotina cerebral
+   (48%) são, disparado, os pilares nº1 mais comuns. */
+const PILAR_DOR = {
+  movimento: 'tirar seu familiar do sofá/cama com segurança — sem forçar o que o corpo não aguenta mais, reduzindo de verdade o risco de queda',
+  cerebral: 'recolocar horários fixos de sono, estímulo e previsibilidade no dia — pra frear a confusão e a desorientação antes que piorem',
+  cognicao: 'estimular a mente e a comunicação no dia a dia, sem forçar nem invalidar o que ele ainda consegue fazer sozinho',
+  participacao: 'sair do "fazer tudo por ele" sem deixá-lo sozinho — devolvendo pequenas decisões que ele ainda pode ter',
+  nutricao: 'resolver a recusa alimentar e a baixa ingestão de água com estratégias que funcionam, não só "insistir mais"',
+  ambiente: 'identificar e eliminar os riscos de queda da própria casa, sem precisar reformar nada',
+  gestao: 'ter um plano claro de quem faz o quê — pra parar de só reagir quando a emergência já aconteceu',
+};
+
 /* ================================================================
    10 PERGUNTAS DE AVALIAÇÃO — pontuação ponderada (máximo 28 pontos)
    Cada resposta soma pontos ao(s) pilar(es) relacionado(s).
@@ -1186,21 +1200,24 @@ function linkFalarComPatricia() {
 }
 function renderPainelCard() {
   const s = safeData();
+  const top1 = pilaresPrioritarios()[0];
+  const dor = PILAR_DOR[top1.id] || 'organizar a rotina pelos 7 Pilares da Preservação, começando pelo que pesa mais agora';
   addRow('bot', `
     <div class="pr-body">
       <div class="pr-glow"></div>
       <span class="pr-badge">📋 SEU PRÓXIMO PASSO</span>
       <div class="pr-kicker">PAINEL ESTRATÉGICO</div>
       <div class="pr-title">DA ROTINA</div>
-      <div class="pr-sub">Transforme o resultado do Scanner em ações práticas pelos <b>7 Pilares da Preservação</b> — com prioridade pro que <b>${s.primeiro}</b> mais precisa agora.</div>
+      <div class="pr-sub">Comece por <b>${esc(top1.nome)}</b> — o que mais pesou no resultado de ${s.primeiro} — com o passo a passo pra ${dor}.</div>
       <div class="pr-stack">
-        <div class="pr-item"><span class="n">✓</span> Os 7 Pilares da Preservação, explicados de forma simples</div>
-        <div class="pr-item"><span class="n">✓</span> 5 ações inegociáveis + 5 negociáveis em cada pilar</div>
+        <div class="pr-item"><span class="n">1º</span> ${esc(top1.nome)}: as 5 ações que não podem esperar + 5 pra quando der</div>
+        <div class="pr-item"><span class="n">✓</span> Os outros 6 Pilares da Preservação também, pra quando precisar deles</div>
         <div class="pr-item"><span class="n">✓</span> Checklists e painel semanal de estímulos</div>
       </div>
       <div class="pr-foot"><b>R$47</b> <span>acesso imediato</span></div>
     </div>
     <a class="pr-cta" href="${linkPainel()}" target="_blank" rel="noopener" onclick="dispararCliquePainel()">🔓 Acessar o Painel por R$47</a>
+    <p style="margin:-8px 18px 16px;font-size:11.5px;color:rgba(255,255,255,.55);text-align:center;">🔒 Você será direcionado(a) pra uma página segura de pagamento</p>
   `, 'produto-bubble');
 }
 
@@ -1234,7 +1251,10 @@ async function etapaFinal() {
     return;
   }
 
-  await bot('O <b>Painel Estratégico da Rotina</b> transforma esse resultado em ações práticas — organizadas pelos 7 Pilares da Preservação, pra você começar exatamente pelas áreas que o seu resultado apontou.', { delay: 1500 });
+  {
+    const dorTop1 = PILAR_DOR[top3[0].id] || 'organizar a rotina pelos 7 Pilares da Preservação';
+    await bot(`O <b>Painel Estratégico da Rotina</b> te dá o passo a passo pra ${dorTop1} — começando por <b>${esc(top3[0].nome)}</b>, que foi o que mais pesou no resultado de ${s.primeiro}.`, { delay: 1500 });
+  }
   await sleep(1800);
 
   renderPainelCard();
