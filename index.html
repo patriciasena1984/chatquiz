@@ -493,7 +493,7 @@ const CONFIG = {
   AVATAR_FALLBACK: 'logo.jpg',
   PRODUTO_CHECKOUT_URL: 'https://pay.onprofit.com.br/MmIQ3jz8?off=t1gWlR', // <-- link de checkout do Painel
   API_SAVE: '/api/save-lead',
-  API_AGENDA: '/api/agenda',              // motor Cal.com invisível pra consultoria — fallback pra AGENDA local
+  API_AGENDA: '/api/gcal',                // Google Agenda (horários livres + evento) — fallback pra AGENDA local
   API_FB_EVENT: '/api/fb-event',          // Meta CAPI (servidor) — deduplicado com o Pixel
   /* Agenda inline pra consultoria — o horário escolhido cai no Supabase
      (status 'agendado' + agendamento_em) pro seu time confirmar */
@@ -1348,7 +1348,7 @@ async function onEmbedAgendado(e, row, info) {
     <div class="ag-done">
       <div class="ag-check">✓</div>
       <h4>${quandoTxt ? esc(quandoTxt) : 'Confirmado!'}</h4>
-      <p>Confirmação chega no seu WhatsApp e e-mail.</p>
+      <p>Guarde o link da reunião abaixo — é por ele que você entra no horário marcado.</p>
       <a class="ag-link" href="${pageUrl}" target="_blank" rel="noopener">📄&nbsp; Minha página da reunião</a>
     </div>
   `;
@@ -1547,6 +1547,11 @@ async function confirmarAgendamento(card, dia, hora, iso) {
       renda: q.investimento || '', nicho: '', bio: '',
       vendorEventTypeId: d.vendorEventTypeId || null,
       metadata: { lead_ref: state.leadRef, origem: 'scanner-envelhecimento' },
+      contexto: {
+        score: d.score, classificacao: d.classificacao, pilares: d.pilaresPrioritarios,
+        preocupacao: q.preocupacao, parentesco: q.parentesco, quemCuida: q.quemCuida,
+        investimento: q.investimento, urgencia: q.urgencia,
+      },
     }, 14000);
     if (r && r.ok) {
       bookingUid = r.uid || '';
@@ -1592,7 +1597,7 @@ async function confirmarAgendamento(card, dia, hora, iso) {
     <div class="ag-done">
       <div class="ag-check">✓</div>
       <h4>${esc(diaTxt)} às ${esc(horaTxt)}</h4>
-      <p>Confirmação chega no seu WhatsApp e e-mail.</p>
+      <p>Guarde o link da reunião abaixo — é por ele que você entra no horário marcado.</p>
       <a class="ag-link" href="${pageUrl}" target="_blank" rel="noopener">📄&nbsp; Minha página da reunião</a>
     </div>
   `;
