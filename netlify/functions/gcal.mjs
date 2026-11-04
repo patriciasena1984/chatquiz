@@ -1,20 +1,19 @@
 /**
- * Agenda do quiz integrada ao Google Agenda (service account).
+ * Agenda do quiz integrada ao Google Agenda via Google Apps Script
+ * (gas/Code.gs, publicado na conta de quem atende — sem service account).
  *   POST /api/gcal { action: 'route' | 'slots' | 'book' | 'info', ... }
  *
  * - slots: lê o free/busy da agenda real e devolve só horários livres
- * - book:  revalida o horário e cria o evento na agenda (nome, WhatsApp e
- *          resultado do quiz na descrição)
+ * - book:  revalida o horário e cria o evento com sala do Meet própria; o
+ *          Google manda o convite por e-mail pra pessoa
  * - info:  dados do evento pra página call.html
  * Mesmo contrato que o front já usava com /api/agenda.
  *
  * Env:
- *   GCAL_SERVICE_ACCOUNT_JSON — JSON completo da chave da service account
- *   GCAL_CALENDAR_ID          — e-mail da agenda compartilhada com a service account
- *   GCAL_MEET_URL             — (opcional) link fixo de reunião (Google Meet)
- * Sem as duas primeiras, responde not_configured e o front usa a agenda local.
+ *   GCAL_SCRIPT_URL    — URL do app da web do Apps Script (termina em /exec)
+ *   GCAL_SCRIPT_SECRET — mesmo segredo definido em SEGREDO no script
+ * Sem as duas, responde not_configured e o front usa a agenda local.
  */
-import { createSign } from 'node:crypto';
 
 const TZ = 'America/Sao_Paulo';
 const OFFSET = '-03:00';              // Brasil sem horário de verão desde 2019
@@ -25,9 +24,10 @@ const DURACAO_MIN = 30;
 const DIAS_ADIANTE = 14;
 const MIN_HORAS = 3;
 
-const CAL_ID = process.env.GCAL_CALENDAR_ID || '';
-const MEET = /^https:\/\//.test(process.env.GCAL_MEET_URL || '') ? process.env.GCAL_MEET_URL : '';
+const SCRIPT_URL = process.env.GCAL_SCRIPT_URL || '';
+const SCRIPT_SECRET = process.env.GCAL_SCRIPT_SECRET || '';
 
+const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const pad = (n) => String(n).padStart(2, '0');
 const txt = (v, max = 200) => String(v ?? '').slice(0, max);
 
@@ -52,47 +52,21 @@ function candidatos(nowMs) {
   return out;
 }
 
-/* ---------- auth: JWT RS256 da service account → access token ---------- */
-let cached = { token: '', exp: 0 };
-async function getToken() {
-  if (cached.token && Date.now() < cached.exp - 60000) return cached.token;
-  const sa = JSON.parse(process.env.GCAL_SERVICE_ACCOUNT_JSON);
-  const b64u = (v) => Buffer.from(v).toString('base64url');
-  const now = Math.floor(Date.now() / 1000);
-  const header = b64u(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
-  const claim = b64u(JSON.stringify({
-    iss: sa.client_email, scope: 'https://www.googleapis.com/auth/calendar',
-    aud: 'https://oauth2.googleapis.com/token', iat: now, exp: now + 3600,
-  }));
-  const signer = createSign('RSA-SHA256');
-  signer.update(`${header}.${claim}`);
-  const sig = signer.sign(sa.private_key).toString('base64url');
-  const res = await fetch('https://oauth2.googleapis.com/token', {
+/* ---------- ponte com o Apps Script ---------- */
+async function gas(action, payload = {}) {
+  const res = await fetch(SCRIPT_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({ grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion: `${header}.${claim}.${sig}` }),
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ secret: SCRIPT_SECRET, action, ...payload }),
+    redirect: 'follow',
   });
-  const j = await res.json();
-  if (!res.ok || !j.access_token) throw new Error('token: ' + (j.error_description || j.error || res.status));
-  cached = { token: j.access_token, exp: Date.now() + (j.expires_in || 3600) * 1000 };
-  return cached.token;
+  let j;
+  try { j = await res.json(); } catch { throw new Error(`${action}: resposta inválida (${res.status})`); }
+  if (!j.ok) throw new Error(`${action}: ${j.reason || res.status} ${j.message || ''}`);
+  return j;
 }
 
-const gfetch = (token, url, opts = {}) => fetch(url, {
-  ...opts,
-  headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json', ...(opts.headers || {}) },
-});
-
-async function ocupados(token, fromMs, toMs) {
-  const r = await gfetch(token, 'https://www.googleapis.com/calendar/v3/freeBusy', {
-    method: 'POST',
-    body: JSON.stringify({ timeMin: new Date(fromMs).toISOString(), timeMax: new Date(toMs).toISOString(), timeZone: TZ, items: [{ id: CAL_ID }] }),
-  });
-  const j = await r.json();
-  const cal = j.calendars && Object.values(j.calendars)[0];
-  if (!r.ok || !cal || cal.errors) throw new Error('freebusy: ' + JSON.stringify((cal && cal.errors) || j.error || r.status));
-  return (cal.busy || []).map((b) => [Date.parse(b.start), Date.parse(b.end)]);
-}
+const ocupados = async (fromMs, toMs) => (await gas('busy', { from: fromMs, to: toMs })).busy;
 
 export default async (req) => {
   if (req.method === 'OPTIONS') return new Response('', { headers: cors() });
@@ -103,16 +77,15 @@ export default async (req) => {
   const action = b.action;
 
   if (action === 'route') return json({ ok: true });
-  if (!process.env.GCAL_SERVICE_ACCOUNT_JSON || !CAL_ID) return json({ ok: false, reason: 'not_configured' });
+  if (!SCRIPT_URL || !SCRIPT_SECRET) return json({ ok: false, reason: 'not_configured' });
 
   try {
-    const token = await getToken();
     const now = Date.now();
 
     if (action === 'slots') {
       const cands = candidatos(now);
       if (!cands.length) return json({ ok: true, slots: {}, iso: {} });
-      const busy = await ocupados(token, now, now + (DIAS_ADIANTE + 2) * 86400000);
+      const busy = await ocupados(now, now + (DIAS_ADIANTE + 2) * 86400000);
       const slots = {}, iso = {};
       for (const c of cands) {
         const fim = c.ms + DURACAO_MIN * 60000;
@@ -133,7 +106,7 @@ export default async (req) => {
         return json({ ok: false, reason: 'invalid_slot' });
       }
       const fim = start + DURACAO_MIN * 60000;
-      if ((await ocupados(token, start, fim)).length) return json({ ok: false, reason: 'slot_taken' });
+      if ((await ocupados(start, fim)).length) return json({ ok: false, reason: 'slot_taken' });
 
       const nome = txt(b.nome, 120), email = txt(b.email, 200);
       const wa = String(b.whatsapp || '').replace(/\D/g, '').slice(0, 20);
@@ -151,38 +124,25 @@ export default async (req) => {
         `Quem cuida hoje: ${txt(c.quemCuida)}`,
         `Investimento mensal: ${txt(c.investimento)}`,
         `Urgência: ${txt(c.urgencia)}`,
-        MEET ? `\nReunião: ${MEET}` : '',
       ].join('\n');
 
-      const r = await gfetch(token, `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CAL_ID)}/events?sendUpdates=none`, {
-        method: 'POST',
-        body: JSON.stringify({
-          summary: `Conversa Cuidado Seguro — ${nome}`,
-          description: descricao,
-          ...(MEET ? { location: MEET } : {}),
-          start: { dateTime: new Date(start).toISOString(), timeZone: TZ },
-          end: { dateTime: new Date(fim).toISOString(), timeZone: TZ },
-          extendedProperties: { private: { nome, lead_ref: txt(b.metadata && b.metadata.lead_ref, 60) } },
-          reminders: { useDefault: true },
-        }),
+      const r = await gas('create', {
+        summary: `Conversa Cuidado Seguro — ${nome}`,
+        description: descricao,
+        start, end: fim,
+        nome,
+        lead_ref: txt(b.metadata && b.metadata.lead_ref, 60),
+        email: EMAIL_OK.test(email) ? email : '',
       });
-      const ev = await r.json();
-      if (!r.ok || !ev.id) throw new Error('insert: ' + JSON.stringify(ev.error || r.status));
-      return json({ ok: true, uid: ev.id, videoUrl: MEET, start: new Date(start).toISOString() });
+      return json({ ok: true, uid: r.id, videoUrl: r.videoUrl || '', start: new Date(start).toISOString() });
     }
 
     if (action === 'info') {
       const uid = String(b.uid || '');
       if (!/^[A-Za-z0-9_-]{5,100}$/.test(uid)) return json({ ok: false, reason: 'bad_uid' });
-      const r = await gfetch(token, `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CAL_ID)}/events/${uid}`);
-      const ev = await r.json();
-      if (!r.ok) return json({ ok: false, reason: 'not_found' });
-      return json({
-        ok: true,
-        nome: txt(ev.extendedProperties && ev.extendedProperties.private && ev.extendedProperties.private.nome, 60),
-        start: ev.start && ev.start.dateTime,
-        videoUrl: MEET,
-      });
+      const ev = await gas('get', { id: uid }).catch(() => null);
+      if (!ev) return json({ ok: false, reason: 'not_found' });
+      return json({ ok: true, nome: txt(ev.nome, 60), start: ev.start, videoUrl: ev.videoUrl || '' });
     }
 
     return json({ ok: false, reason: 'unknown_action' }, 400);

@@ -19,3 +19,6 @@ node_modules/
 
 # material de referência (não faz parte do app)
 referencia/
+
+# script do Apps Script com o segredo real
+gas/*.local.gs
