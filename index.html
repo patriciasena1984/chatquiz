@@ -492,6 +492,7 @@ const CONFIG = {
   AVATAR_URL: 'patricia.jpg',             // <-- foto da Patrícia (cai no logo.jpg se o arquivo não existir)
   AVATAR_FALLBACK: 'logo.jpg',
   PRODUTO_CHECKOUT_URL: 'https://pay.onprofit.com.br/MmIQ3jz8?off=t1gWlR', // <-- link de checkout do Painel
+  CALENDLY_URL: 'https://calendly.com/pattryciasena/30min',                        // <-- link do Calendly (ex.: https://calendly.com/seu-usuario/30min); vazio = usa a agenda própria abaixo
   API_SAVE: '/api/save-lead',
   API_AGENDA: '/api/gcal',                // Google Agenda (horários livres + evento) — fallback pra AGENDA local
   API_FB_EVENT: '/api/fb-event',          // Meta CAPI (servidor) — deduplicado com o Pixel
@@ -1280,6 +1281,7 @@ async function etapaFinal() {
 async function renderAgenda() {
   const d = state.data;
   const q = d.qualificacao || {};
+  if (CONFIG.CALENDLY_URL) { renderAgendaCalendly(); return; }
   const rota = await postJSON(CONFIG.API_AGENDA, {
     action: 'route', renda: q.investimento || '', nicho: '', bio: '',
   }, 6000);
@@ -1290,6 +1292,59 @@ async function renderAgenda() {
     persist();
   }
   await renderAgendaInline(rota || {});
+}
+
+/* Calendly embutido no chat — o Calendly cuida de horários, convite por
+   e-mail e link da reunião (pros dois lados); aqui só detectamos o agendamento
+   pra marcar o lead como 'agendado'. */
+function renderAgendaCalendly() {
+  const d = state.data;
+  const row = addRow('bot', `
+    <div class="ag-head">
+      <span class="ag-ic">📅</span>
+      <div><h4>Escolhe o melhor horário</h4><p>Conversa gratuita com a Patrícia · online</p></div>
+    </div>
+    <div class="cal-embed-body"><div class="calendly-slot" style="min-width:280px;height:660px"></div></div>
+  `, 'agenda-card cal-embed-card');
+  const slot = row.querySelector('.calendly-slot');
+
+  const iniciar = () => {
+    window.Calendly.initInlineWidget({
+      url: CONFIG.CALENDLY_URL + (CONFIG.CALENDLY_URL.includes('?') ? '&' : '?') + 'hide_gdpr_banner=1&primary_color=b8874a',
+      parentElement: slot,
+      prefill: {
+        name: d.nome || '',
+        email: d.email || '',
+        customAnswers: { a1: d.whatsapp ? '+' + d.whatsapp : '' },
+      },
+      utm: { utmSource: 'quiz', utmCampaign: 'scanner-envelhecimento', utmContent: state.leadRef },
+    });
+  };
+  if (window.Calendly) iniciar();
+  else {
+    const css = document.createElement('link');
+    css.rel = 'stylesheet'; css.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(css);
+    const js = document.createElement('script');
+    js.src = 'https://assets.calendly.com/assets/external/widget.js';
+    js.async = true; js.onload = iniciar;
+    document.head.appendChild(js);
+  }
+
+  window.addEventListener('message', async (ev) => {
+    if (!ev.origin.endsWith('calendly.com') || !ev.data || ev.data.event !== 'calendly.event_scheduled') return;
+    if (state.data.agendado) return;
+    const uri = (ev.data.payload && ev.data.payload.event && ev.data.payload.event.uri) || '';
+    state.data.agendado = true;
+    state.data.agendamentoEm = null; // o Calendly não informa o horário da reunião ao navegador; veja no painel do Calendly
+    state.data.bookingUid = uri.split('/').pop() || '';
+    persist();
+    salvarLead('agendado');
+    dispararAgendamento();
+    const s = safeData();
+    await bot(`✅ <b>Agendado, ${s.primeiro}!</b> Enviamos o convite com o link da reunião para o seu e-mail. Qualquer coisa, me chama no WhatsApp. Até lá! 🚀`, { delay: 900 });
+  });
+  scrollDown();
 }
 
 /* booker da instância embutido no chat — agendamento REAL sem API */
