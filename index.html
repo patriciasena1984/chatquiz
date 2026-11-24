@@ -1281,7 +1281,7 @@ async function etapaFinal() {
 async function renderAgenda() {
   const d = state.data;
   const q = d.qualificacao || {};
-  if (CONFIG.CALENDLY_URL) { renderAgendaCalendly(); return; }
+  if (CONFIG.CALENDLY_URL) { await renderAgendaCalendly(); return; }
   const rota = await postJSON(CONFIG.API_AGENDA, {
     action: 'route', renda: q.investimento || '', nicho: '', bio: '',
   }, 6000);
@@ -1297,8 +1297,19 @@ async function renderAgenda() {
 /* Calendly embutido no chat — o Calendly cuida de horários, convite por
    e-mail e link da reunião (pros dois lados); aqui só detectamos o agendamento
    pra marcar o lead como 'agendado'. */
-function renderAgendaCalendly() {
+async function renderAgendaCalendly() {
   const d = state.data;
+  const s0 = safeData();
+  await bot(`${s0.primeiro}, antes de escolher o horário: <b>estarei reservando um horário na minha agenda só para conversar com você</b> 💛<br><br>É importante que você <b>honre esse combinado</b>. Se acontecer algum imprevisto, remarque ou cancele pelo link do e-mail de confirmação, para eu poder oferecer o horário a outra pessoa.`, { delay: 1100 });
+  await new Promise((resolve) => {
+    const r = addRow('bot', `<a class="pr-cta" href="#" style="margin:2px 0">✅ Combinado, vou comparecer</a>`);
+    r.querySelector('a').addEventListener('click', (ev) => {
+      ev.preventDefault();
+      r.remove();
+      user('Combinado, vou comparecer');
+      resolve();
+    }, { once: true });
+  });
   const row = addRow('bot', `
     <div class="ag-head">
       <span class="ag-ic">📅</span>
@@ -1342,7 +1353,7 @@ function renderAgendaCalendly() {
     salvarLead('agendado');
     dispararAgendamento();
     const s = safeData();
-    await bot(`✅ <b>Agendado, ${s.primeiro}!</b> Enviamos o convite com o link da reunião para o seu e-mail. Qualquer coisa, me chama no WhatsApp. Até lá! 🚀`, { delay: 900 });
+    await bot(`✅ <b>Agendado, ${s.primeiro}!</b> Reservei esse horário só para você e enviamos o convite com o link da reunião para o seu e-mail. Se precisar mudar, use o link do convite. Conto com você! 🚀`, { delay: 900 });
   });
   scrollDown();
 }
