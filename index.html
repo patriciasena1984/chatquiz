@@ -1138,11 +1138,8 @@ async function etapaQualificacao(idx, replay = false) {
       state.data.pilaresPrioritarios = top3.map(p => p.nome).join(' | ');
       const altoRiscoUrgente = score >= 13 && state.data.qualificacao.urgencia === 'Imediatamente';
       // família já investe bem no cuidado (2 faixas mais altas) → vai direto pro
-      // agendamento da consultoria, sem passar pela oferta do Painel R$47.
-      // Exceção: quem diz que está "apenas buscando informações" não agenda
-      // (dados de nov/2026: esse perfil quase não comparece) e segue pro Painel.
-      state.data.investeAlto = INVESTIMENTOS_ALTOS.includes(state.data.qualificacao.investimento)
-        && state.data.qualificacao.urgencia !== 'Estou apenas buscando informações';
+      // agendamento da consultoria, sem passar pela oferta do Painel R$47
+      state.data.investeAlto = INVESTIMENTOS_ALTOS.includes(state.data.qualificacao.investimento);
       state.data.qualificado = altoRiscoUrgente || state.data.investeAlto;
       persist();
       salvarLead('completo');
