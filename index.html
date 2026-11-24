@@ -492,7 +492,9 @@ const CONFIG = {
   AVATAR_URL: 'patricia.jpg',             // <-- foto da Patrícia (cai no logo.jpg se o arquivo não existir)
   AVATAR_FALLBACK: 'logo.jpg',
   PRODUTO_CHECKOUT_URL: 'https://pay.onprofit.com.br/MmIQ3jz8?off=t1gWlR', // <-- link de checkout do Painel
-  CALENDLY_URL: 'https://calendly.com/pattryciasena/30min',                        // <-- link do Calendly (ex.: https://calendly.com/seu-usuario/30min); vazio = usa a agenda própria abaixo
+  CALENDLY_URL: 'https://calendly.com/pattryciasena/30min',
+  // aviso exibido antes do calendário enquanto a agenda estiver bloqueada; some sozinho depois da data 'ate' (inclusive)
+  CALENDLY_AVISO: { ate: '2026-11-30', texto: 'Minha agenda está cheia até 30/11, então pode ser que o calendário apareça sem horários agora. A partir de 1º de dezembro volto a ter vagas: se não aparecer horário, <b>me chama no WhatsApp</b> que combinamos uma data, ou volte aqui depois dessa data.' },                        // <-- link do Calendly (ex.: https://calendly.com/seu-usuario/30min); vazio = usa a agenda própria abaixo
   API_SAVE: '/api/save-lead',
   API_AGENDA: '/api/gcal',                // Google Agenda (horários livres + evento) — fallback pra AGENDA local
   API_FB_EVENT: '/api/fb-event',          // Meta CAPI (servidor) — deduplicado com o Pixel
@@ -1310,6 +1312,11 @@ async function renderAgendaCalendly() {
       resolve();
     }, { once: true });
   });
+  const av = CONFIG.CALENDLY_AVISO;
+  const hojeBR = new Date().toLocaleDateString('sv-SE', { timeZone: 'America/Sao_Paulo' });
+  if (av && av.texto && hojeBR <= av.ate) {
+    await bot(`${av.texto}<br><br><a class="pr-cta" style="margin:4px 0 0" href="${linkFalarComPatricia()}" target="_blank" rel="noopener" onclick="dispararCliqueWhats()">💬 Falar com a Patrícia no WhatsApp</a>`, { delay: 900 });
+  }
   const row = addRow('bot', `
     <div class="ag-head">
       <span class="ag-ic">📅</span>
